@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 06 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>算法初级与数据结构</title>
+      <link>https://ximuli.github.io/2018/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>算法初级 结构化编程  一行一行执行 有条件控制语句 if&amp;hellip;else&amp;hellip; 有循环控制语句 while(exp) do&amp;hellip;  伪代码的好处  不用纠结于语法的细节，因为语法是你自己定的 可以体会语言设计者的想法，因为语法是你自己定的  什么是算法 &amp;lt;&amp;gt;
+以下是高德纳在他的著作《计算机程序设计艺术》里对算法的特征归纳：
+ 输入：一个算法必须有零个或以上输入量。 输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。 明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实际运行结果是确定的。 有限性：依据图灵的定义，一个算法是能够被任何图灵完备系统模拟的一串运算，而图灵机只有有限个状态、有限个输入符号和有限个转移函数（指令）。而一些定义更规定算法必须在有限个步骤内完成任务。 有效性：又称可行性。能够实现，算法中描述的操作都是可以通过已经实现的基本运算执行有限次来实现。  什么是数据结构 就是数据的结构。
+一般来说是这样的：
+ 我们要解决一个跟数据相关的问题 分析这个问题，想出对应的数据结构 分析数据结构，想出算法   数据结构和算法是互相依存、不可分开的 你学习完排序算法，就能了解常见的数据结构
+ 排序算法 体育委员两两摸头法（冒泡排序） 体育老师一指禅法（选择排序） 起扑克牌法（插入排序） 强迫症收扑克牌法（基数排序） 快排 归并排序 堆排序 注：排序可视化 https://visualgo.net/bn/sorting
+数据结构 哈希（hash） 哈希就是键值对的组合：
+xxx = { key:value, key:value, key:calue }  满足键值对结构的就是 hash
+队列（Queue）  先进先出 可以用数组实现 基数排序也用到了队列 queue.push queue.pop  栈（Stack）  先进后出 可以用数组实现 stack.</description>
+    </item>
+    
+  </channel>
+</rss>

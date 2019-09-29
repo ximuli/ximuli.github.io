@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="leyili">
+  <meta name="description" content="乐亦栗的个人网站">
+  <meta name="keywords" content="前端，个人网站，前端笔记，随笔，杂文">
+  
+  <link rel="prev" href="https://ximuli.github.io/2018/html-tag/" />
+  <link rel="next" href="https://ximuli.github.io/2018/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
+  <link rel="canonical" href="https://ximuli.github.io/2018/css/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           CSS 温故而知新 | 乐亦栗的个人网站
+       
+  </title>
+  <meta name="title" content="CSS 温故而知新 | 乐亦栗的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ximuli.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "CSS 温故而知新",
+    "headline" : "CSS 温故而知新",
+    "description" : "中文学习资源只看大 V 的（毕竟他们要维护形象不能瞎写），英文资源看 CSS Tricks、MDN 和 Codrops。书的话作用不大，最权威的书其实是文档。\n如果你想快速上手，就先写小 demo 再学理论。\n如果你想一鸣惊人，就仔细看 CSS 规范文档。\n查询CSS文档请直接搜索 CSS spec\n 知识点 引入CSS的四种方式 style 属性、style 标签、css link、css import\n高度由什么决定  div 高度由其内部文档流元素的高度总和决定。\n 文档流 问：什么是文档流？\n答：文档内元素的流动方向。\n需要关注的几点：  内联元素从左向右流动，如果容器宽度不够，就换行继续从左向右流动 块元素独占一行，依次从上往下流 如果一个内联元素中有一个很长的单词，那么容器宽度不够时默认是不会分成两段显示的。因为浏览器认为这个单词是一个整体。 CSS 中 word-break 属性可以控制这种情况。  内联元素的高度由什么决定？  无力吐槽 o(╥﹏╥)o line-height\n 与字体和字体设计师设置的一些参数有关。\n  参考：深入理解 CSS：字体度量、line-height 和 vertical-align\n布局与居中 左右横向布局 float \x2b clearfix\n给所有子元素添加 float ，给其父元素添加 clearfix 。\n.clearfix:after { content: \x26quot;\x26quot;; display: block; clear: both; }  注：此方法同样适用于左中右布局。",
+    "inLanguage" : "zh-CN",
+    "author" : "leyili",
+    "creator" : "leyili",
+    "publisher": "leyili",
+    "accountablePerson" : "leyili",
+    "copyrightHolder" : "leyili",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-04-30 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-04-30 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/ximuli.github.io\/2018\/css\/",
+    "wordCount" : "147",
+    "keywords" : [ "CSS", "乐亦栗的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">CSS 温故而知新</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ximuli.github.io/" rel="author">leyili</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-04-30 itemprop="datePublished">April 30, 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ximuli.github.io/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<blockquote>
+<p>中文学习资源只看大 V 的（毕竟他们要维护形象不能瞎写），英文资源看 CSS Tricks、MDN 和 Codrops。书的话作用不大，最权威的书其实是文档。</p>
+
+<p>如果你想快速上手，就先写小 demo 再学理论。</p>
+
+<p>如果你想一鸣惊人，就仔细看 CSS 规范文档。</p>
+
+<p>查询CSS文档请直接搜索 CSS spec</p>
+</blockquote>
+
+<h1 id="知识点">知识点</h1>
+
+<h2 id="引入css的四种方式">引入CSS的四种方式</h2>
+
+<p>style 属性、style 标签、css link、css import</p>
+
+<h2 id="高度由什么决定">高度由什么决定</h2>
+
+<blockquote>
+<p>div 高度由其内部文档流元素的高度总和决定。</p>
+</blockquote>
+
+<h3 id="文档流">文档流</h3>
+
+<p>问：什么是文档流？</p>
+
+<p>答：文档内元素的流动方向。</p>
+
+<h4 id="需要关注的几点">需要关注的几点：</h4>
+
+<ul>
+<li>内联元素从左向右流动，如果容器宽度不够，就换行继续从左向右流动</li>
+<li>块元素独占一行，依次从上往下流</li>
+<li>如果一个内联元素中有一个很长的单词，那么容器宽度不够时默认是不会分成两段显示的。因为浏览器认为这个单词是一个整体。 CSS 中 <code>word-break</code> 属性可以控制这种情况。</li>
+</ul>
+
+<h4 id="内联元素的高度由什么决定">内联元素的高度由什么决定？</h4>
+
+<ul>
+<li>无力吐槽 o(╥﹏╥)o</li>
+
+<li><p><code>line-height</code></p></li>
+
+<li><p>与字体和字体设计师设置的一些参数有关。</p></li>
+</ul>
+
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/25808995?group_id=825729887779307520" rel="nofollow noreferrer" target="_blank">深入理解 CSS：字体度量、line-height 和 vertical-align</a></p>
+
+<h1 id="布局与居中">布局与居中</h1>
+
+<h2 id="左右横向布局">左右横向布局</h2>
+
+<p>float + clearfix</p>
+
+<p>给所有子元素添加 float ，给其父元素添加 clearfix 。</p>
+
+<pre><code class="language-css">.clearfix:after {
+  content: &quot;&quot;;
+  display: block;
+  clear: both;
+} 
+</code></pre>
+
+<p>注：此方法同样适用于左中右布局。</p>
+
+<h2 id="div-水平居中">div 水平居中</h2>
+
+<pre><code class="language-css">margin-left: auto;
+margin-right: auto;
+</code></pre>
+
+<h2 id="垂直居中">垂直居中</h2>
+
+<p><code>line-height</code></p>
+
+<p>div高度为 30px，div 里有一行字垂直居中，字的大小为 14px：</p>
+
+<ul>
+<li>给div的样式为 <code>font-size：14px；line-height：20px; padding: 5px 0;</code></li>
+<li>给div的样式为 <code>font-size：14px；line-height：24px; padding: 3px 0;</code></li>
+<li>给div的样式为 <code>font-size: 14px;  line-height: 30px;</code></li>
+</ul>
+
+<p>注：</p>
+
+<ul>
+<li>css 布局想要 BUG 少，尽量不要写 <code>width</code> 和 <code>height</code> 。</li>
+<li><code>max-width</code> 比 <code>width</code> 更好用一点。</li>
+<li><code>display：inline-block</code> 一定要加 <code>vertical-align:top</code> 。</li>
+<li><code>::before</code> <code>::after</code> 是伪元素，必须给 <code>content: '';</code> ；<code>:hover</code> <code>:nth-child()</code> 是伪类。</li>
+</ul>
+
+<h1 id="css-学习资源">CSS 学习资源</h1>
+
+<ol>
+<li>Google: 关键词 MDN</li>
+<li><a href="https://css-tricks.com/" rel="nofollow noreferrer" target="_blank">CSS Tricks</a></li>
+<li><a href="https://www.google.com/search?q=%E9%98%AE%E4%B8%80%E5%B3%B0+css" rel="nofollow noreferrer" target="_blank">Google: 阮一峰 css</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/category/css/page/25/" rel="nofollow noreferrer" target="_blank">张鑫旭的 240 多篇 CSS 博客</a></li>
+<li><a href="https://tympanus.net/codrops/category/playground/" rel="nofollow noreferrer" target="_blank">Codrops 炫酷 CSS 效果</a></li>
+<li><a href="http://www.ituring.com.cn/book/1695" rel="nofollow noreferrer" target="_blank">CSS揭秘</a></li>
+<li><a href="http://cndevdocs.com/" rel="nofollow noreferrer" target="_blank">CSS 2.1 中文 spec</a></li>
+<li><a href="http://adamschwartz.co/magic-of-css/" rel="nofollow noreferrer" target="_blank">Magic of CSS</a> 免费在线书</li>
+</ol>
+
+<p>（完）</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>leyili </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ximuli.github.io/2018/css/>https://ximuli.github.io/2018/css/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ximuli.github.io/tags/css/">
+                    #CSS</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ximuli.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ximuli.github.io/2018/html-tag/" class="prev" rel="prev" title="HTML 常见标签"><i class="iconfont icon-left"></i>&nbsp;HTML 常见标签</a>
+         
+        
+        <a href="https://ximuli.github.io/2018/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="next" rel="next" title="算法初级与数据结构">算法初级与数据结构&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ximuli.github.io/">leyili</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

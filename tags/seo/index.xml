@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SEO on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/seo/</link>
+    <description>Recent content in SEO on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SEO笔记</title>
+      <link>https://ximuli.github.io/2017/seo%E5%B0%8F%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/seo%E5%B0%8F%E7%AC%94%E8%AE%B0/</guid>
+      <description>看SEO视频记下的一些笔记，为方便复习，暂且记录于此。
+SEO笔记 1.通过SEO创建一个人成功的网站，考虑四个因素：  用户需求 网站内容 网站程序 懂SEO的运营  为了SEO做的网站，叫做营销型网站，此类网站做的越简单越好。例如经典的F型树状结构。
+2.内容长度  中文800字左右 英文500个单词左右 专题页，栏目页，权重页，内容越丰富越好  3.四处一词  标题标签 关键词标签，描述标签（英文关键词添加到URL中） 在正文中多次出现，并在第一次进行强调（例如使用strong标签） 其他页面的锚文本关键词里  4.站内定向锚文本 5.内容编辑标准  长度：800字左右 多分段，短句子，分模块 图文并茂 1%的站内定向锚文本（例如长度800字，则做8个站内定向锚文本） 充分考虑四处一词  6.外链建设  友情链接 网站目录链接 论坛签名链接或者博客留言链接 软文外链  外链的几种形式  锚文本（带关键词的链接） 超链接（可以点击的链接） 纯文本链接（不能点击的链接） 图片链接  7.日志分析 日志可以记录所有访客的访问记录，相当于网站的监控摄像头。 在FTP的根目录中找到带log的文件夹，即为网站日志文件 * 光年日志分析工具
+以下场景需要日志分析： * 网站未收录时 * 网站排名异常时 * 网站被攻击或入侵时
+8.更新频率和高质量的内容 5/10/15（第一个月每天5篇，第二个月每天10篇） 可以同比例放大或缩小
+9.SEO的重点  友好的系统 高质量的内容 科学的更新频率 准确的定位  外链对于SEO，相当于催化剂的作用</description>
+    </item>
+    
+    <item>
+      <title>初识SEO</title>
+      <link>https://ximuli.github.io/2017/%E5%88%9D%E8%AF%86seo/</link>
+      <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/%E5%88%9D%E8%AF%86seo/</guid>
+      <description> SEO：Search Engine optimization 在了解搜索引擎自然排名原理的基础上，对网站进行调整优化，提升在搜索引擎中的关键词排名。
+SEO是指从自然搜索结果获得网站流量的技术和过程，是在了解搜索引擎自然排名机制的基础之上，对网站进行内部及外部的调整优化，改进网站在搜索引擎中的关键词自然排名，获得更多流量，从而达成网站销售和品牌建设的目标。
+关键词分类  主关键词 长尾关键词 相关关键词等等  关键词指数 PC搜索指数、移动搜索指数
+关键词挖掘渠道  搜索下拉框 相关搜索 关键词挖掘工具：站长工具……  关键词竞争大小的依据  搜索结果量 竞价推广数量 网站主域名数量  外链建设 外链是指一个网站的外部所有指向该网站的链接，无论是锚文本链接还是网址链接都属于外链。
+ 友情链接 网站目录链接 论坛签名链接或者博客留言链接 软文外链  外链的作用  可以提高权重 可以提高关键词排名 可以提高网站曝光度 可以带来更多流量  常用的外链平台  博客平台 新浪、网易、搜狐等 问答平台 百度知道、360问答等 论坛贴吧 百度贴吧、天涯论坛等 分类信息 58、赶集等 社交平台
+ 文库 网络收藏夹 视频平台
+  外链注意事项  相关性：在行业相关的平台发外链。 规律性：保持一定的数量和节奏。 多样性：在多个平台发布。 价值性：不能单纯地发外链，要提高内容的质量。  友链建设 提升网站的关键词排名、权重和流量。
+当与比自身权重低的网站交换友链时，会导致自身权重流失。
+ 友链过多的网站不去交换 被惩罚的网站不去交换 友链加nofollow的网站不去交换 灰色行业敏感行业不去交换 交换友情链接要循序渐进  搜索引擎常用指令  intitle: 搜索标题包含某内容 inurl: 在指定url中搜索内容 site: 查询网站收录情况 doamin: 查询网站外链情况 filetype: 搜索指定格式的内容，如txt、pdf、doc等  </description>
+    </item>
+    
+  </channel>
+</rss>

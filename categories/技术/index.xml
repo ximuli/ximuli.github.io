@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 26 May 2019 21:23:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript中那些关于坐标和距离的属性与方法</title>
+      <link>https://ximuli.github.io/2019/javascript%E4%B8%AD%E9%82%A3%E4%BA%9B%E5%85%B3%E4%BA%8E%E5%9D%90%E6%A0%87%E5%92%8C%E8%B7%9D%E7%A6%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sun, 26 May 2019 21:23:03 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2019/javascript%E4%B8%AD%E9%82%A3%E4%BA%9B%E5%85%B3%E4%BA%8E%E5%9D%90%E6%A0%87%E5%92%8C%E8%B7%9D%E7%A6%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%96%B9%E6%B3%95/</guid>
+      <description>一 前言 在前端开发中总会遇到各种各样需要使用或计算坐标和距离的情况，但是这些属性和方法众多，全部熟练地记下来并非是一件易事，大多只能现查，耗费不少时间精力，于是便有了整理记录的想法，即加深了印象，又方便随时查阅。
+二 window 对象  浏览器里面，window 对象（注意，w为小写）指当前的浏览器窗口。
+它也是当前页面的顶层对象，即最高一层的对象，所有其他对象都是它的下属。一个变量如果未声明，那么默认就是顶层对象的属性。
+摘自《阮一峰 JavaScript 教程》
+ 位置大小属性 window.screenX , window.screenY 只读属性
+返回浏览器窗口左上角相对于当前屏幕左上角的水平距离和垂直距离（单位像素）。
+window.innerHeight , window.innerWidth 只读属性
+返回网页在当前窗口中可见区域的高度和宽度，即「视口」（viewport）的大小（单位像素）。
+注意，这两个属性包括滚动条的高度和宽度。
+window.outerHeight , window.outerWidth 只读属性
+返回浏览器窗口的高度和宽度，包括浏览器菜单和边框（单位像素）。
+window.scrollX , window.scrollY 只读属性
+别名： window.pageXOffset , window.pageYOffset
+分别返回页面的水平滚动距离和垂直滚动距离，单位都是像素。
+ 注意，这两个属性的返回值不是整数，而是双精度浮点数。如果页面没有滚动，它们的值就是0。
+摘自《阮一峰 JavaScript 教程》
+为了跨浏览器兼容性，请使用 window.pageXOffset 代替 window.scrollX。另外，旧版本的 IE（&amp;lt;9）两个属性都不支持，必须通过其他的非标准属性来解决此问题。
+摘自 MDN ：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollX
+ window 对象的方法 window.scrollTo() , window.scroll() , window.scrollBy() window.scrollTo 方法 &amp;mdash;&amp;gt; 别名： window.scroll 方法
+ 用于将文档滚动到指定位置。</description>
+    </item>
+    
+    <item>
+      <title>vim 入门</title>
+      <link>https://ximuli.github.io/2019/vimtutor/</link>
+      <pubDate>Tue, 14 May 2019 21:06:36 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2019/vimtutor/</guid>
+      <description>本文的初衷
+从我知道 vim 开始我就有心学习并尝试过几次，每次都是暂时的心血来潮，最终全部不了了之，就连最基本的 vimtutor 我都是学个两三节就半途而废，所以这次干脆写篇文章，利用几次学习把这篇文章完善起来。既方便自己坚持学习记录，又方便在之后使用中查看和复习。
+如果正在看这篇文章的你已经是个老手，或者已经完整练过多次 vimtutor ，那么很遗憾本文并不会对你有更多的帮助。
+安装 Windows 安装 Git Bash 或者 cmder
+Linux 和 MacOS 无需安装
+单词 Vim 中的快键键都是有语义的，如果了解下面这些单词，相信你记住快捷键也不是什么难事。
+quit
+write/read
+yank
+paste
+delete
+change
+find
+word
+forward/backward
+up/down
+insert/append
+do/undo/redo
+replace
+vim 中的模式与模式切换 注意：
+后文中带尖括号的描述表示键盘按键，比如 &amp;lt;回车&amp;gt; 是指回车按键。
+在终端（我这里在 windows 下使用的 Gitbash）输入 vim &amp;lt;回车&amp;gt; 即可进入 Vim 编辑器。
+Vim 有多种模式，分别是：
+ 正常模式 （normal） 插入模式 （insert） 冒号模式 （或者叫命令模式 command） 可视模式 （visual）  启动 Vim （在终端输入 vim &amp;lt;回车&amp;gt;）后，并不能直接输入字符，vim 默认处于「正常模式」。</description>
+    </item>
+    
+    <item>
+      <title>HTML语义化</title>
+      <link>https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/</link>
+      <pubDate>Wed, 06 Mar 2019 21:39:32 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/</guid>
+      <description>本文最初于 2018-09-21 发布于 知乎 ，后在 《重学前端》 专栏的学习中，重新复习整理，发布于 Github 上，并计划写一系列前端学习相关的文章。欢迎 star 。
+ HTML 语义化 简单来说，我们可以理解为：用正确的标签做正确的事情。
+例如：
+段落用 p 标签，标题用 h 系列标签，边栏用 aside 标签，主要内容用 main 标签。正确使用语义标签可以带来很多好处。
+为什么要关注 HTML 语义化？（为什么要使用语义类标签？） 对人：
+ 增强可读性，对开发者更友好，在没有 CSS 的情况下也能较好地呈现网页的内容结构与代码结构，便于团队的开发和维护。  对机器：
+ 有利于 SEO ，可以让搜索引擎爬虫更好地获取到更多有效信息，搜索引擎的爬虫依赖于标签来确定上下文和各个关键字的权重，有效提升网页的搜索量。 支持读屏软件，方便其他设备的解析（如屏幕阅读器、盲人阅读器等），利于无障碍阅读，提高可访问性。  一些语义类标签介绍 &amp;lt;header&amp;gt;
+用于展示介绍性内容，通常包含一组介绍性的或是辅助导航的实用元素。
+&amp;lt;footer&amp;gt;
+表示最近一个章节内容或者根节点元素的页脚。通常出现在尾部，包含一些作者信息、相关链接、版权信息等。
+&amp;lt;aside&amp;gt;
+表示跟文章主体不那么相关的部分，可能包含导航、广告等工具性质的内容。
+侧边栏是 aside，aside 不一定是侧边栏。
+aside 和 header 中都可能出现导航 &amp;lt;nav&amp;gt;，header 中的导航多数是到文章的目录，而 aside 中的导航多是到关联页面或者整站地图。
+&amp;lt;address&amp;gt;
+footer 中可以包含此元素。
+容易误用，并非表示单纯的地址，而是表示「文章作者的联系方式」。
+ 可以让作者为它最近的 &amp;lt;article&amp;gt; 或者 &amp;lt;body&amp;gt; 祖先元素提供联系信息。在后一种情况下，它应用于整个文档。</description>
+    </item>
+    
+    <item>
+      <title>Cookie注册与登录</title>
+      <link>https://ximuli.github.io/2018/cookie/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/cookie/</guid>
+      <description>Cookie Cookie 是什么  Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据。
+ 浏览器需要保存这段数据，不得轻易删除。
+ 此后每次浏览器访问该服务器，都必须带上这段数据。
+  Cookie 就是这么简单，这就是 Web 开发里 Cookie 的含义。
+Cookie 的特点  服务器通过 Set-Cookie 响应头设置 Cookie
+// node.js response.setHeader(&#39;Set-Cookie&#39;,&#39;xxxxxx&#39;)  浏览器得到 Cookie 之后，每次请求都要带上 Cookie
+ 服务器读取 Cookie 就知道登录用户的信息
+  Cookie 的作用 Cookie 一般有两个作用。
+第一个作用是识别用户身份。
+第二个作用是记录历史。
+相关问题 问：在 Chrome 登录了得到 Cookie，用 Safari 访问，Safari 会带上 Cookie 吗
+no
+问：Cookie 存在哪
+Windows 存在 C 盘的一个文件里
+问：Cookie会被用户篡改吗？
+可以，Session 来解决这个问题，防止用户篡改
+问：Cookie 有效期吗？
+默认有效期20分钟左右，不同浏览器策略不同
+后端可以强制设置有效期，具体语法看 MDN</description>
+    </item>
+    
+    <item>
+      <title>ES6 系列：let 和 const</title>
+      <link>https://ximuli.github.io/2018/es6-let-and-const/</link>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/es6-let-and-const/</guid>
+      <description>let 和 const let  我们不应该再使用 var 关键字。
+ let 的出现是为了方便地使用局部变量。
+使用 var 关键词会有变量声明提升，let 则不会。
+{ let a = 1; window.jewel = function() { console.log(a) } } console.log(a) // Uncaught ReferenceError: a is not defined  let 的作用域只管到花括号。
+{ let a = 1 } console.log(a) // Uncaught ReferenceError: a is not defined  let 可以嵌套。会出现「临时死区」（Temp Dead Zone），如果在声明语句之前使用变量就会报错。
+ JS 终于想通了，一个变量应该先声明再使用。
+ 例如下面代码，如果在 let 声明之前使用 a 就会报错。
+{ let a =1 console.</description>
+    </item>
+    
+    <item>
+      <title>ES6 系列：类</title>
+      <link>https://ximuli.github.io/2018/es6-class/</link>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/es6-class/</guid>
+      <description>原型 原型是啥：https://www.zhihu.com/question/56770432/answer/315342130
+原型就是共有属性
+JS 只用一个很简单的规则就实现了对象复用
+类 类是啥？
+依据上图我们来自己写个例子：
+// 如何用原型模拟类 var 人类共有属性 = { walk() { console.log(&#39;走两步&#39;) }, species: &#39;人类&#39; } function createPerson(name,age) { var obj = {} obj.name = name || &#39;&#39; obj.age = age || 18 obj.__proto__ = 人类共有属性 return obj } createPerson(&#39;jewel&#39;)  结果如下：
+ES 6 中的类 语法如下：
+class Person { constructor(name,age) { this.name = name this.age = 18 } walk() { console.log(&#39;走两步&#39;) } }  contructor 里写的是自有属性，外写的是共有属性。我们可以新建一个对象来验证一下。</description>
+    </item>
+    
+    <item>
+      <title>JSONP 和 AJAX</title>
+      <link>https://ximuli.github.io/2018/jsonp%E5%92%8Cajax/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/jsonp%E5%92%8Cajax/</guid>
+      <description>首先我们应该明白，JSONP 和 JSON 没什么关系。
+ JSON 全称 JavaScript Object Notation
+是一种由道格拉斯·克罗克福特构想和设计、轻量级的数据交换语言。注意，这是一门语言。
+JSONP 什么是 JSONP ？ 请求方：前端（浏览器）
+响应方：后端（服务器）
+请求方动态创建 script，将 src 指向响应方，同时传一个查询参数 ?callback=xxx
+响应方根据查询参数 callback，构造形如 xxx.call(undefined, &amp;lsquo;你要的数据&amp;rsquo;) 这样的响应
+浏览器接收到响应，就会执行 xxx.call(undefined, &amp;lsquo;你要的数据&amp;rsquo;)
+那么请求方就知道了他要的数据
+这就是 JSONP
+关于 JSONP 的一些约定  callbackName -&amp;gt; callback xxx -&amp;gt; 随机数 frank12312312312321325() jQuery 用法
+$.ajax({ url: &amp;quot;http://jack.com:8002/pay&amp;quot;, dataType: &amp;quot;jsonp&amp;quot;, success: function( response ) { if(response === &#39;success&#39;){ amount.innerText = amount.innerText - 1 } } })   JSONP 为什么不支持 POST 请求？  JSONP 是通过动态创建 script 实现的 创建 script 只能发送 GET ，没有办法发送 POST 。  AJAX 异步的 JavaScript 和 XML （Asynchronous Javascript And XML）</description>
+    </item>
+    
+    <item>
+      <title>jQuery温故而知新</title>
+      <link>https://ximuli.github.io/2018/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0/</link>
+      <pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0/</guid>
+      <description>jQuery 是专注于简化 DOM 操作，AJAX 调用和 Event 处理的 JavaScript 库。它被 JavaScript 开发者频繁使用。
+jQuery 使用 $(selector).action() 的格式给一个（或多个）元素绑定事件。具体来说，$(selector) 调用 jQuery 函数选择 selector 元素，并给它绑定一个叫 .action 的事件 API。
+ 自己封装两个函数 本文以下面这段 HTML 作为示例：
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;JS Bin&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li id=&amp;quot;item1&amp;quot;&amp;gt;选项1&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item2&amp;quot;&amp;gt;选项2&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item3&amp;quot;&amp;gt;选项3&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item4&amp;quot;&amp;gt;选项4&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item5&amp;quot;&amp;gt;选项5&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  封装一个函数，获取到一个节点的所有兄弟姐妹
+function getSiblings(node) {} function getSiblings(node) { var allChildren = node.parentNode.children; var arr = {length:0} for (let i = 0; i &amp;lt; allChildren.</description>
+    </item>
+    
+    <item>
+      <title>DOM-API</title>
+      <link>https://ximuli.github.io/2018/dom-api/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/dom-api/</guid>
+      <description>对 DOM 的理解  文档对象模型：Document Object Model D 在此表示 XML 文档，HTML 是 XML 的一种衍生品；O 表示 Object ，在内存中，通过构造函数（如 Document，Element，Text，Comment 等等）构造出对象；M 表示 Model，表示 Document 和 Object 映射关系的模型；所以称为 DOM 页面中的节点 ===&amp;gt; 通过构造函数 ===&amp;gt; 对象，这就是 DOM 的主要功能  Node 对 Node 的理解  Node 即节点，分为 Document，Element，Text 以及其他不重要的。 JS里的对象，都是继承自 Object 的；页面里的对象，都是继承自 Node，跟 NodeJS 没关系，这里的 Node 是一个函数，一般我们不会自己去用这个函数 Node 最终又是继承自 Object 的
+// 为了便于理解，我们可以在控制台打出节点，看一下它们的原型链上到底存在些什么东西 console.dir(document.body) console.dir(document.documentElement) //document.documentElement 返回文档对象的根元素   下面这张图一定可以帮助你更加理解 Node：
+属性 childNodes,firstChild,innerText,lastChild,nextSibling,nodeName,nodeType,nodeValue,outerText
+ownerDocument,parentElement,parentNode,previousSibling,textContent
+ Node.</description>
+    </item>
+    
+    <item>
+      <title>JS函数</title>
+      <link>https://ximuli.github.io/2018/js%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E5%87%BD%E6%95%B0/</guid>
+      <description>函数的五种声明方式  具名函数
+function f(x,y){ return x+y } f.name // &#39;f&#39;  匿名函数
+var f f = function(x,y){ return x+y } f.name // &#39;f&#39;  具名函数赋值
+var f f = function f2(x,y){ return x+y } f.name // &#39;f2&#39; console.log(f2) // Uncaught ReferenceError: f2 is not defined  window.Function （不推荐）
+var f = new Function(&#39;x&#39;,&#39;y&#39;,&#39;return x+y&#39;) f.name // &amp;quot;anonymous&amp;quot;  箭头函数
+var f = (x,y) =&amp;gt; { return x+y } var sum = (x,y) =&amp;gt; x+y //等同于 var sum = (x,y) =&amp;gt; {return x+y} var n2 = n =&amp;gt; n*n //等同于 var n2 = (n) =&amp;gt; {return n*n}    注意函数的 name 属性在不同的声明方法中各种不同的表现。</description>
+    </item>
+    
+    <item>
+      <title>JS数组</title>
+      <link>https://ximuli.github.io/2018/js%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E6%95%B0%E7%BB%84/</guid>
+      <description>标准库  Number String Boolean 不加new 返回一个基本类型的值，加new返回复杂类型(对象)
+Object Array Function 加new不加new都一样，是返回复杂类型(对象)
+ 数组的本质  人类理解：数组就是数据的有序集合 JS理解：数据就是原型链中有 Array.prototype 的对象
+ 伪数组  有 0,1,2,3,4,5&amp;hellip;n,length 这些 key 的对象 原型链中没有 Array.prototype  这样的对象就是伪数组
+目前知道的伪数组有：
+ arguments 对象 document.querySelectAll(&amp;lsquo;div&amp;rsquo;) 返回的对象  数组的 forEach() 自己实现一个简单的 forEach 函数：
+function forEach(arr, fn) { for(let i = 0; i &amp;lt; arr.length; i++) { fn(arr[i],i) } } forEach([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;],function(value,key) {console.log(value,key)})  来看另一种方法：
+var obj = {0:&#39;a&#39;,1:&#39;b&#39;, length: 2} obj.forEach = function(fn) { for (let i = 0; i&amp;lt;this.</description>
+    </item>
+    
+    <item>
+      <title>原型与原型链</title>
+      <link>https://ximuli.github.io/2018/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <description>对象，原型与原型链 全局对象 ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）
+window 就是一个哈希表，有很多属性。
+window 的属性就是全局变量。
+在浏览器下， window 的属性可以分为两类：
+ ECMAScript 规定的，例如 parseInt() ，parseFloat() ，Number() ，String()，Boolean()， setTimeout() 等等 浏览器私有属性，例如 alert 弹框提示 ， propmt 用户填写 ， confirm 确认， console 等，document 也是。 DOM也有标准，由 W3C 制定。  Number() Number() 有两种用法：
+ Number(xxx) 用来把 xxx 转换为数字 声明一个 number 对象，包装成对象，有很多便捷的操作可以用
+var n = new Number(1) n.valueOf() // 1 n.toString() // &amp;quot;1&amp;quot; n.toFixed(3) // &amp;quot;1.000&amp;quot; n.toExponential() &amp;quot;1e+0&amp;quot;   但是在 Javascript 中，我们很少用第二种方法。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript里的类型转换</title>
+      <link>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>JS里的类型转换 任意类型转字符串  xxx.toString()
+(1).toString() // &amp;quot;1&amp;quot; true.toString() // &amp;quot;true&amp;quot; null.toString() // Uncaught TypeError: Cannot read property &#39;toString&#39; of null undefined.toString() // Uncaught TypeError: Cannot read property &#39;toString&#39; of undefined {}.toString() // Uncaught SyntaxError: Unexpected token . ({}).toString() // &amp;quot;[object Object]&amp;quot;  String(xxx)
+String(1) // &amp;quot;1&amp;quot; String(true) // &amp;quot;true&amp;quot; String(null) // &amp;quot;null&amp;quot; String(undefined) // &amp;quot;undefined&amp;quot; String({}) // &amp;quot;[object Object]&amp;quot;  xxx + &#39;&#39;，当然这种方法更简便
+1 + &#39;&#39; // &amp;quot;1&amp;quot; true + &#39;&#39; // &amp;quot;true&amp;quot; null + &#39;&#39; // &amp;quot;null&amp;quot; undefined + &#39;&#39; // &amp;quot;undefined&amp;quot; {} + &#39;&#39; // 0 var obj = {} obj + &#39;&#39; // &amp;quot;[object Object]&amp;quot;   任意类型转布尔  Boolean(xxx) !</description>
+    </item>
+    
+    <item>
+      <title>JavaScript里的数据类型</title>
+      <link>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>JS里的数据类型 number  二进制：0b 开头 八进制：0开头 十六进制：0x 开头  string  单引号和双引号 空字符串和空格字符串 转义， var a = &#39;\&#39;&#39; 多行字符串
+var a = &#39;12345\ 67890&#39; a //&amp;quot;1234567890&amp;quot; //如果斜杠后面有空格，则会报错 //推荐： var b = &#39;12345&#39; + &#39;67890&#39; b //&amp;quot;1234567890&amp;quot; //ES6新语法 var c = `12345 67890` c /* &amp;quot;12345 67890&amp;quot; */ c.length // 11 (因为有回车)   undefined 和 null  变量没有赋值，则为 undefined 有一个对象 object，但是现在还不想给值，就可以设置为 null，表示 空对象  object  即为哈希表 复杂类型，由简单类型组成 key 其实是字符串，可以省略；但是某些情况下不可以省略，比如有一些特殊字符，或者以数字开头 可以使用 delete 来删除对象中的键值对</description>
+    </item>
+    
+    <item>
+      <title>算法初级与数据结构</title>
+      <link>https://ximuli.github.io/2018/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>算法初级 结构化编程  一行一行执行 有条件控制语句 if&amp;hellip;else&amp;hellip; 有循环控制语句 while(exp) do&amp;hellip;  伪代码的好处  不用纠结于语法的细节，因为语法是你自己定的 可以体会语言设计者的想法，因为语法是你自己定的  什么是算法 &amp;lt;&amp;gt;
+以下是高德纳在他的著作《计算机程序设计艺术》里对算法的特征归纳：
+ 输入：一个算法必须有零个或以上输入量。 输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。 明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实际运行结果是确定的。 有限性：依据图灵的定义，一个算法是能够被任何图灵完备系统模拟的一串运算，而图灵机只有有限个状态、有限个输入符号和有限个转移函数（指令）。而一些定义更规定算法必须在有限个步骤内完成任务。 有效性：又称可行性。能够实现，算法中描述的操作都是可以通过已经实现的基本运算执行有限次来实现。  什么是数据结构 就是数据的结构。
+一般来说是这样的：
+ 我们要解决一个跟数据相关的问题 分析这个问题，想出对应的数据结构 分析数据结构，想出算法   数据结构和算法是互相依存、不可分开的 你学习完排序算法，就能了解常见的数据结构
+ 排序算法 体育委员两两摸头法（冒泡排序） 体育老师一指禅法（选择排序） 起扑克牌法（插入排序） 强迫症收扑克牌法（基数排序） 快排 归并排序 堆排序 注：排序可视化 https://visualgo.net/bn/sorting
+数据结构 哈希（hash） 哈希就是键值对的组合：
+xxx = { key:value, key:value, key:calue }  满足键值对结构的就是 hash
+队列（Queue）  先进先出 可以用数组实现 基数排序也用到了队列 queue.push queue.pop  栈（Stack）  先进后出 可以用数组实现 stack.</description>
+    </item>
+    
+    <item>
+      <title>CSS 温故而知新</title>
+      <link>https://ximuli.github.io/2018/css/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/css/</guid>
+      <description>中文学习资源只看大 V 的（毕竟他们要维护形象不能瞎写），英文资源看 CSS Tricks、MDN 和 Codrops。书的话作用不大，最权威的书其实是文档。
+如果你想快速上手，就先写小 demo 再学理论。
+如果你想一鸣惊人，就仔细看 CSS 规范文档。
+查询CSS文档请直接搜索 CSS spec
+ 知识点 引入CSS的四种方式 style 属性、style 标签、css link、css import
+高度由什么决定  div 高度由其内部文档流元素的高度总和决定。
+ 文档流 问：什么是文档流？
+答：文档内元素的流动方向。
+需要关注的几点：  内联元素从左向右流动，如果容器宽度不够，就换行继续从左向右流动 块元素独占一行，依次从上往下流 如果一个内联元素中有一个很长的单词，那么容器宽度不够时默认是不会分成两段显示的。因为浏览器认为这个单词是一个整体。 CSS 中 word-break 属性可以控制这种情况。  内联元素的高度由什么决定？  无力吐槽 o(╥﹏╥)o line-height
+ 与字体和字体设计师设置的一些参数有关。
+  参考：深入理解 CSS：字体度量、line-height 和 vertical-align
+布局与居中 左右横向布局 float + clearfix
+给所有子元素添加 float ，给其父元素添加 clearfix 。
+.clearfix:after { content: &amp;quot;&amp;quot;; display: block; clear: both; }  注：此方法同样适用于左中右布局。</description>
+    </item>
+    
+    <item>
+      <title>HTML 常见标签</title>
+      <link>https://ximuli.github.io/2018/html-tag/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/html-tag/</guid>
+      <description>关于 a 标签和 button 标签  如果是要跳转到其他页面或某一部分，就用 a 标签；如果是想弹出对话框之类的操作，就用 button 标签。 二者的区别之一在于是否为 空标签 。  关于 CSS 布局 目前 CSS 布局最适合的布局只有两种：横向布局和纵向布局。所以在写 HTML 的时候要多注意一下，怎么写才是最方便继续写 CSS 的。
+iframe 标签  嵌套页面
+ 默认存在边框，所以通常会直接设置属性 frameborder = &amp;quot;0&amp;quot; 来取消默认的边框样式
+ 例如 &amp;lt;iframe src=&amp;quot;https://www.baidu.com&amp;quot; name=&amp;quot;xxx&amp;quot; frameborder = &amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;
+  name 属性指定当前 iframe 的名称；此时如果有另外的 a 标签属性是 target=xxx，那么此 a 标签链接被点击时网页会在名为 xxx 的 iframe 中打开。
+ sandbox 属性  学习资料：
+Iframe 有什么好处，有什么坏处？
+[iframe MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe
+a 标签 跳转页面，发起 GET 请求</description>
+    </item>
+    
+    <item>
+      <title>HTML 温故而知新</title>
+      <link>https://ximuli.github.io/2018/html/</link>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/html/</guid>
+      <description>先搞清楚要做什么，做的过程中需要学什么就去学什么。先用再学才是学编程 的不二法门。
+ HTML HpyerText Markup Language
+W3C 万维网联盟（World Wide Web Consortium），又称 W3C 理事会，是万维网的主要国际标准组织。由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。
+W3C 根据浏览器的实际情况总结文档，并不是凭空想象。
+W3C制定的网络标准并非强制而只是推荐标准。
+MDN MDN Web Docs（旧称Mozilla Developer Network、Mozilla Developer Center，简称MDN）是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站。
+关于标签  理解清楚每个标签的含义，关注标签语义化；不要老用 div ，div 是没有任何语义的
+ HTML5 的 DOCTYPE 是 &amp;lt;!DOCTYPE html&amp;gt; ，其他版本都很难记。当然也可以做一些了解：
+  https://www.w3.org/QA/2002/04/valid-dtd-list.html
+ html head body 这些标签实际上在特定情况下是可以省略的，我们可以查看文档（搜索 HTML spec） 来了解：https://www.w3.org/TR/html5/ 当然，如果你嫌弃文档，也可以直接在 MDN 上搜索
+ 常见的一些标签：a、form、input、button、h1、p、ul、ol、small、strong、div、span、kbd、video、audio、svg 。基本上了解标签对应单词的意思，就知道这个标签怎么用了。（关注语义化）
+  空元素 一个空元素（empty element）可能是 HTML，SVG，或者 MathML 里的一个不可能存在子节点 （例如内嵌的元素或者元素内的文本）的 element 。
+在 HTML 中，通常在一个空元素上使用一个闭标签是无效的。</description>
+    </item>
+    
+    <item>
+      <title>HTTP入门</title>
+      <link>https://ximuli.github.io/2018/introduction-to-the-http/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/introduction-to-the-http/</guid>
+      <description>WWW的发明 WWW（World Wide Web）是Tim Berners-Lee （李爵士）于1989年至1992年间发明。
+主要的三个概念：
+ URI，（统一资源标识符：Uniform Resource Identifier） HTTP（超文本传输协议HyperText Transfer Protocol），两个电脑间传输内容的协议 HTML （超级文本标记语言：HyperText Markup Language）  URI 是什么 全称：Uniform Resource Identifier
+URI 分为 URL 和 URN
+URL（统一资源定位符Uniform Resource Locator）
+URN（统一资源名称Uniform Resource Name）
+URL的组成：
+https://www.baidu.com/s?wd=hello&amp;amp;rsv_spt=1#5 协议 https:// 域名 www.baidu.com 路径 /s 查询参数 ?wd=hello&amp;amp;rsv_spt=1 锚点 #5  DNS 全称：域名系统 &amp;ndash; Domain Name System
+ 输入域名 输出IP  请求 Server + Client + HTTP
+ 浏览器负责发起请求 服务器在 80 端口接收请求 服务器负责返回内容（响应） 浏览器负责下载响应内容  HTTP的作用就是指导浏览器和服务器如何进行沟通。</description>
+    </item>
+    
+    <item>
+      <title>网络与IP</title>
+      <link>https://ximuli.github.io/2018/network-and-ip/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/network-and-ip/</guid>
+      <description>TCP 全称：传输控制协议（Transmission Control Protocol）
+ HTTP 协议的底层其实是由 TCP 协议和 IP 协议（简称 TCP/IP）构建的。
+ 来看下面的问题：
+ TCP 和 UDP 的区别是什么  简答：
+TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。
+ TCP 的三次握手指的是什么  简答：每次建立连接前 ，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：
+ 1. 客户端：我要连接你了，可以吗 2. 服务端：嗯，我准备好了，连接我吧 3. 客户端：那我连接你咯。 4. 开始后面步骤  TCP 学习资料：
+TCP 协议简介
+《TCP/IP 详解（卷一）》
+IP 全称： 网络协议（Internet Protocol）
+只要你在互联网中，那么你就会有一个 IP。通俗上理解，IP 分为「内网 IP」 和「外网 IP」
+ 你从电信那里买来带宽，一年一千多。 电信为你提供 DNS 服务。 你买了一个路由器，然后用电脑和手机分别连接路由器广播出来的无线 WIFI。 只要路由器连上电信的服务器，那么路由器就会有一个「外网 IP」，比如「14.17.32.211」就是一个外网 IP。这就是你在互联网中的地址。 但是如果你重启路由器，那么你很有「可能」被重新分配一个「外网 IP」，也就是说 你的路由器没有「固定的外网 IP」 你可以花每年几千块钱租用一个「固定的外网 IP」，但是显然不会这么浪费钱。像腾讯、阿里这样的大公司租用了很多外网 IP，这样才能对我们提供稳定的服务。 但是有个问题，你的路由器的外网 IP 如果是14.</description>
+    </item>
+    
+    <item>
+      <title>命令行基础</title>
+      <link>https://ximuli.github.io/2018/the-command-line-1/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/the-command-line-1/</guid>
+      <description>一些基本概念  文件与目录（文件夹） ~ / . .. $  ~ 当前用户目录 / 硬盘（Linux下没有盘符的概念，/ 就表示所有硬盘） . 当前目录 .. 父目录 $ 没有实际意义，只是提醒你可以输入命令了   命令一般都是英文缩写  在windows中请安装使用 git bash
+    命令含义 英文 命令     创建目录 make directory mkdir   删除 remove rm   移动、重命名 move mv   复制 copy cp   罗列 list ls   改变目录 change directory cd    开始动手  cd ~/Desktop 进入桌面 mkdir demo-1 创建目录，这时你可以切到桌面，看到 demo-1 目录 rm -rf demo-1 删除目录 touch 1.</description>
+    </item>
+    
+    <item>
+      <title>Git入门（1）</title>
+      <link>https://ximuli.github.io/2018/git-1/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/git-1/</guid>
+      <description>学习 Git 最好是在使用中学习，否则很难理解一些命令是什么意思。最好的学习方法就是，照着教程把命令挨个儿敲一遍，从实践中去理解和学习。
+ 下面就开始今天的学习：
+ 创建目录作为项目目录：mkdir git-demo-1
+ 进入目录：cd git-demo-1
+ git init 这句命令意义在于把当前目录初始化为 Git 管理的仓库，可以理解为本地仓库初始化。之后当前位置路径后面会多出一个 (master) 的标识。
+ ls -la 就会看到 .git 目录，忽略它。（假装这句不存在）
+ 在 git-demo-1 目录中添加任意文件
+ touch index.html mkdir css touch css/style.css  运行 git status -sb 可以看到文件前面有 ?? 号
+## No commits yet on master ?? css/ ?? index.html   这些 ?? 表示 git 目前还不知道你要怎么对待这些变动
+ 使用 git add 将文件添加到 「暂存区」
+ 可以一个个分别添加  git add index.</description>
+    </item>
+    
+    <item>
+      <title>变量声明提升（声明前置）</title>
+      <link>https://ximuli.github.io/2018/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%8D%87%E5%A3%B0%E6%98%8E%E5%89%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%8D%87%E5%A3%B0%E6%98%8E%E5%89%8D%E7%BD%AE/</guid>
+      <description>参考：《你不知道的JavaScript》上卷 第一部分 第四章
+ 原理 引擎会在解释 JavaScript 代码之前首先对其进行编译。编译阶段中的一部分工作就是找到所有的声明，并用合适的作用域将它们关联起来。
+正确的思路：包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。
+例子 例子1：
+a = 2; var a; console.log(a); // 2  console.log(a); // undefined var a = 2;   只有声明本身会被提升，而赋值或其他运行逻辑会留在原地。如果提升改变了代码执行的顺序，会造成非常严重的破坏。  例子2：
+foo(); function foo() { console.log(a); //undefined var a = 2; }  foo 函数的声明（这个例子还包括实际函数的隐含值）被提升了，因此第一行中的调用可以正常执行。
+ 另外值得注意的是，每个作用域都会进行提升操作。
+ 声明会被会被提升，但是函数表达式却不会被提升。
+  看下面改造后的例子：
+foo(); var foo = function () { console.log( a ); var a = 2; } // 报错： Uncaught TypeError: foo is not a function  讲解（来自饥人谷）  在进入一个执行环境后，先把 var 和 function 声明的变量前置， 再去顺序执行代码。</description>
+    </item>
+    
+    <item>
+      <title>高阶函数</title>
+      <link>https://ximuli.github.io/2018/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</guid>
+      <description>参考资源：廖雪峰的官方网站
+ map() 、reduce() 、filter() 、sort()
+map  不会改变原数组  map() 方法定义在 JavaScript 的 Array 中，我们调用 Array 的 map() 方法，传入我们自己的函数，就得到了一个新的 Array 作为结果。
+&#39;use strict&#39;; function pow(x) { return x*x; }; var arr = [2,3,4]; var result = arr.map(pow); // 数组的 map() 方法会返回一个新数组 console.log(arr); //[2,3,4] 原数组不会改变 console.log(result); //[4,9,16]  简单来说，就是把函数 pow() 作用到 Array 的每一个元素并把结果生成一个新的 Array。
+reduce  不会改变原数组  Array 的 reduce() 方法把一个函数（此函数必须有两个参数 ）作用在 Array 的每一项上，并把结果继续和序列的下一个元素做累计的运算。
+来看几个简单的例子：
+对一个 Array 求和</description>
+    </item>
+    
+    <item>
+      <title>SEO笔记</title>
+      <link>https://ximuli.github.io/2017/seo%E5%B0%8F%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/seo%E5%B0%8F%E7%AC%94%E8%AE%B0/</guid>
+      <description>看SEO视频记下的一些笔记，为方便复习，暂且记录于此。
+SEO笔记 1.通过SEO创建一个人成功的网站，考虑四个因素：  用户需求 网站内容 网站程序 懂SEO的运营  为了SEO做的网站，叫做营销型网站，此类网站做的越简单越好。例如经典的F型树状结构。
+2.内容长度  中文800字左右 英文500个单词左右 专题页，栏目页，权重页，内容越丰富越好  3.四处一词  标题标签 关键词标签，描述标签（英文关键词添加到URL中） 在正文中多次出现，并在第一次进行强调（例如使用strong标签） 其他页面的锚文本关键词里  4.站内定向锚文本 5.内容编辑标准  长度：800字左右 多分段，短句子，分模块 图文并茂 1%的站内定向锚文本（例如长度800字，则做8个站内定向锚文本） 充分考虑四处一词  6.外链建设  友情链接 网站目录链接 论坛签名链接或者博客留言链接 软文外链  外链的几种形式  锚文本（带关键词的链接） 超链接（可以点击的链接） 纯文本链接（不能点击的链接） 图片链接  7.日志分析 日志可以记录所有访客的访问记录，相当于网站的监控摄像头。 在FTP的根目录中找到带log的文件夹，即为网站日志文件 * 光年日志分析工具
+以下场景需要日志分析： * 网站未收录时 * 网站排名异常时 * 网站被攻击或入侵时
+8.更新频率和高质量的内容 5/10/15（第一个月每天5篇，第二个月每天10篇） 可以同比例放大或缩小
+9.SEO的重点  友好的系统 高质量的内容 科学的更新频率 准确的定位  外链对于SEO，相当于催化剂的作用</description>
+    </item>
+    
+    <item>
+      <title>FCC之路：Seek and Destroy（摧毁数组）</title>
+      <link>https://ximuli.github.io/2017/fcc%E4%B9%8B%E8%B7%AFseek-and-destroy%E6%91%A7%E6%AF%81%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/fcc%E4%B9%8B%E8%B7%AFseek-and-destroy%E6%91%A7%E6%AF%81%E6%95%B0%E7%BB%84/</guid>
+      <description>实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。 例子： destroyer([1, 2, 3, 1, 2, 3], 2, 3) 应该返回 [1, 1].
+ 一些简单的算法题我总是能卡好久，之所以说简单，是因为苦苦思考无结果后到网上找答案，经常是随便几行代码就行搞定。然而这些网上的答案很多都是写一堆废话，然后粘几行没有注释的代码，看起来颇为吃力，根本不知道该怎么理解。暂且做个记录。
+解法1 function destroyer(arr) { // Remove all the values var arr_arg = arguments; // 提前获取destroyer函数的arguments对象 for(var i = 1; i &amp;lt; arr_arg.length; i++){ arr = arr.filter(function(val){ return arr_arg[i] !== val; // 其他倒还好，就是不理解这行的意思 }); } return arr; } destroyer([1, 2, 3, 1, 2, 3], 2, 3);  我好像明白了一点，先来看一段MDN上关于filter()方法的描述： &amp;gt;filter 为数组中的每个元素调用一次 callback函数，并利用所有使得 callback返回 true 或 等价于 true 的值的元素创建一个新数组。</description>
+    </item>
+    
+    <item>
+      <title>初识SEO</title>
+      <link>https://ximuli.github.io/2017/%E5%88%9D%E8%AF%86seo/</link>
+      <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/%E5%88%9D%E8%AF%86seo/</guid>
+      <description> SEO：Search Engine optimization 在了解搜索引擎自然排名原理的基础上，对网站进行调整优化，提升在搜索引擎中的关键词排名。
+SEO是指从自然搜索结果获得网站流量的技术和过程，是在了解搜索引擎自然排名机制的基础之上，对网站进行内部及外部的调整优化，改进网站在搜索引擎中的关键词自然排名，获得更多流量，从而达成网站销售和品牌建设的目标。
+关键词分类  主关键词 长尾关键词 相关关键词等等  关键词指数 PC搜索指数、移动搜索指数
+关键词挖掘渠道  搜索下拉框 相关搜索 关键词挖掘工具：站长工具……  关键词竞争大小的依据  搜索结果量 竞价推广数量 网站主域名数量  外链建设 外链是指一个网站的外部所有指向该网站的链接，无论是锚文本链接还是网址链接都属于外链。
+ 友情链接 网站目录链接 论坛签名链接或者博客留言链接 软文外链  外链的作用  可以提高权重 可以提高关键词排名 可以提高网站曝光度 可以带来更多流量  常用的外链平台  博客平台 新浪、网易、搜狐等 问答平台 百度知道、360问答等 论坛贴吧 百度贴吧、天涯论坛等 分类信息 58、赶集等 社交平台
+ 文库 网络收藏夹 视频平台
+  外链注意事项  相关性：在行业相关的平台发外链。 规律性：保持一定的数量和节奏。 多样性：在多个平台发布。 价值性：不能单纯地发外链，要提高内容的质量。  友链建设 提升网站的关键词排名、权重和流量。
+当与比自身权重低的网站交换友链时，会导致自身权重流失。
+ 友链过多的网站不去交换 被惩罚的网站不去交换 友链加nofollow的网站不去交换 灰色行业敏感行业不去交换 交换友情链接要循序渐进  搜索引擎常用指令  intitle: 搜索标题包含某内容 inurl: 在指定url中搜索内容 site: 查询网站收录情况 doamin: 查询网站外链情况 filetype: 搜索指定格式的内容，如txt、pdf、doc等  </description>
+    </item>
+    
+    <item>
+      <title>常用Meta标签用法记录</title>
+      <link>https://ximuli.github.io/2017/%E5%B8%B8%E8%A7%81%E7%9A%84meta%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/%E5%B8%B8%E8%A7%81%E7%9A%84meta%E6%A0%87%E7%AD%BE/</guid>
+      <description>&amp;lt;meta&amp;gt; 常用标签全记录 平常见到某些网站头部的&amp;lt;meta&amp;gt;标签有一大串，然而我并不知道其具体作用都是什么，现做如下整理，便于以后开发中的使用。
+&amp;lt;meta&amp;gt; 元素可提供有关某个 HTML 元素的元信息 (meta-information)，比如描述、针对搜索引擎的关键词以及刷新频率。
+meta标签的可选属性有两个，分别是：name和http-equiv，必要属性为content。
+ meta常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。
+ name属性 renderer 作用于双核浏览器
+&amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;webkit&amp;quot;&amp;gt; //让双核浏览器使用webkit内核渲染页面 &amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;ie-comp&amp;quot;&amp;gt; //默认IE兼容模式 &amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;ie-stand&amp;quot;&amp;gt; //默认IE标准模式  UC和QQ &amp;lt;meta name=&amp;quot;screen-orientation&amp;quot; content=&amp;quot;portrait&amp;quot;&amp;gt; //UC强制竖屏； &amp;lt;meta name=&amp;quot;x5-orientation&amp;quot; content=&amp;quot;portrait&amp;quot;&amp;gt; //QQ强制竖屏； &amp;lt;meta name=&amp;quot;full-screen&amp;quot; content=&amp;quot;yes&amp;quot;&amp;gt; //UC强制全屏； &amp;lt;meta name=&amp;quot;x5-fullscreen&amp;quot; content=&amp;quot;true&amp;quot;&amp;gt; //QQ强制全屏 &amp;lt;meta name=&amp;quot;browsermode&amp;quot; content=&amp;quot;application&amp;quot;&amp;gt; //UC应用模式 &amp;lt;meta name=&amp;quot;x5-page-mode&amp;quot; content=&amp;quot;app&amp;quot;&amp;gt; //QQ应用模式;  robots &amp;lt;meta name=&amp;quot;robots&amp;quot;content=&amp;quot;none&amp;quot;&amp;gt;  robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。
+ 信息参数为all：文件将被检索，且页面上的链接可以被查询； 信息参数为none：文件将不被检索，且页面上的链接不可以被查询； 信息参数为index：文件将被检索； 信息参数为follow：页面上的链接可以被查询； 信息参数为noindex：文件将不被检索，但页面上的链接可以被查询； 信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询。  viewport 常用于移动端的设计中。</description>
+    </item>
+    
+    <item>
+      <title>Sass学习笔记</title>
+      <link>https://ximuli.github.io/2017/learnsass/</link>
+      <pubDate>Mon, 23 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/learnsass/</guid>
+      <description>这里是Jonathan的Sass学习笔记，本笔记所有操作均在windows环境下进行 ，将持续更新。
+ 安装 ## 1、通过命令安装 Sass 先在电脑中安装好 Ruby 之后，接下来就可以安装 Sass 了。在windows下安装 Sass 有多种方法。但这几种方法都是非常的简单，只需要在命令终端输入一行命令即可。
+打开电脑的命令终端，输入下面的命令：
+gem install sass
+如果上面的方法没有安装成功，可以使用下面的两种方法。
+## 2、本地安装 Sass
+直接使用上面的命令安装会让你无法正常实现安装（网络受限原因），当碰到这种情况之时，那么安装需要特殊去处理，可以通过下面的方法来实现 Sass 的正常安装：
+可以到 Rubygems(http://rubygems.org/) 网站上将 Sass 的安装包（http://rubygems.org/gems/sass）下载下来，然后在命令终端输入：
+gem install &amp;lt;把下载的安装包拖到这里&amp;gt;
+直接回车即可安装成功。
+注：在 iOSX 系统平台，可以直接将下载的安装包拖到 &amp;ldquo;gem install&amp;rdquo; 后面，如果在是 Windows 系统，需要手功输入安装的文件路径。
+## 3、淘宝 RubyGems 镜像安装 Sass
+除了下载 Sass 安装包到本地安装之外，碰到网络原因无法安装时还可以使用淘宝 RubyGems 镜像安装 Sass。只是我们需要通过 gem sources 命令来配置源，先移除默认的 https://rubygems.org 源，然后添加淘宝的源 https://ruby.taobao.org：
+第一步：移动默认的源
+gem sources &amp;ndash;remove https://rubygems.org/
+第二步：指定淘宝的源
+gem sources -a https://ruby.</description>
+    </item>
+    
+    <item>
+      <title>Hexo 踩坑笔记：利用Hexo和github pages服务搭建个人博客</title>
+      <link>https://ximuli.github.io/2017/start/</link>
+      <pubDate>Tue, 10 Jan 2017 17:43:12 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/start/</guid>
+      <description>** 声明：** 本人是学渣，英语渣，代码渣。能完成此博客并且部署到线上大多依赖于网络上乐于分享的诸多前辈。 在此表示感谢。另外搭建过程中有很多问题我依然一头雾水，各位小伙伴若有高见，还请不吝赐教。再次感谢。
+ 此文所有设置均在window环境下进行
+安装Git和node.js 请自行到官网下载，另，请自备梯子。安装基本没什么需要讲的，一路 next 就可以。
+git官网
+node.js官网
+需要学习Git的同学请移步廖雪峰前辈的网站：Git教程 需要注意的是，在需要用到 npm 之前，请切换到国内的淘宝镜像，否则下载速度异常缓慢，导致各种出错。
+此处放上淘宝镜像的链接。
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org  之后在用到 npm 的地方只需要换成 cnpm 就可以了。
+安装Hexo $ mkdir hexo $ cd hexo $ hexo init  之后经过了漫长的等待。结果：
+没有管这个，继续进行。
+$ cnpm install $ hexo generate $ hexo server  打开 http://localhost:4000/ ，没反应。
+又重新输入了一下$ hexo init ， 最后弹出的一行是 Start Blogging with Hexo !
+再次打开 http://localhost:4000/ ，这次是一直处于刷新的状态，页面却显示不出来。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript中的布尔操作符</title>
+      <link>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B0%94%E6%93%8D%E4%BD%9C%E7%AC%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B0%94%E6%93%8D%E4%BD%9C%E7%AC%A6/</guid>
+      <description>布尔操作符 逻辑非 ( ! ) 逻辑非操作符可以应用于ECMAScript中的任何值。无论这个值是什么数据类型，这个操作符都会返回一个布尔值。
+逻辑非操作符首先会将它的操作数转换为一个布尔值，然后再对其求反。（ps：此处应该可以理解为先用 Boolean() 转型函数将操作数转换为布尔值，然后对其求反。 2018-1-7 ）
+同时使用两个逻辑非操作符，就会模拟Boolean() 转型函数的行为。
+逻辑与 ( &amp;amp;&amp;amp; )、逻辑或( || ) 这两者都属于短路操作符 ，即：如果第一个操作数能够决定结果，那么就不会再对第二个操作数求值。
+对于逻辑与操作符 ( &amp;amp;&amp;amp; ) 而言，
+如果第一个操作数是 false ，则无论第二个操作数是什么值，结果都必定是 false 。
+逻辑与的真值表如下：
+   第一个操作数 第二个操作数 结果     ture true true   true false false   false true false   false false false    逻辑与操作可以应用于任何类型的操作数，而不仅仅是布尔值。在有一个操作数不是布尔值的情况下，逻辑与操作就不一定返回布尔值；此时，它遵循如下规则：
+ 如果第一个操作数是对象，则返回第二个操作数； 如果第二个操作数是对象，则只有在第一个操作数的求值结果为 true 的情况下才会返回该对象； 如果两个操作数都是对象，则返回第二个操作数； 如果第一个操作数是 null ，则返回 null ； 如果第一个操作数是 NaN ，则返回 NaN ； 如果第一个操作数是 undefined ，则返回 undefined 。  ————————————————————分割线 ——————————————————————</description>
+    </item>
+    
+    <item>
+      <title>JavaScript中的递增和递减操作符</title>
+      <link>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F%E6%93%8D%E4%BD%9C%E7%AC%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F%E6%93%8D%E4%BD%9C%E7%AC%A6/</guid>
+      <description>递增和递减操作符属于一元操作符（只能操作一个值的操作符），各有两个版本：前置型和后置型。
+ 前置和后置在一般情况下没什么问题（此处说法十分不严谨，到底何为一般情况？一般情况有多少？由于不严谨导致后期遇到问题根本难以解决，详见以下2018年2月5日更新），例如当语句中只有递增或递减这一个操作：
+var age = 24; age++; //25 var num = 24; ++num; //25  前置型递增和递减操作，变量的值都是在语句被求值以前改变的。（有所调整，见2018.2.5更新）
+var num1 = 2; var num2 = 20; var num3 = --num1 + num2; //21 num1; //1  后置型递增和递减操作，变量的值都是在语句被求值之后改变的。（有所调整，见2018.2.5更新）
+var num1 = 2; var num2 = 20; var num3 = num1-- + num2; //22 num1; //1  2018年2月5日更新：
+遇到一道题目，卡了很久没有理解。
+var fn = function (i) { return function() { return i++; } }(10); var a = fn(); var b = fn(); console.</description>
+    </item>
+    
+    <item>
+      <title>《JavaScript高级程序设计》4.1.3--传递参数</title>
+      <link>https://ximuli.github.io/1/javascript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A14.1.3-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/1/javascript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A14.1.3-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</guid>
+      <description>章节 4.1.3 ——传递参数  page：70
+ ECMAScript 中所有函数的参数都是按值传递的。（这里之所以这样写，是因为某些编程语言在传递参数的时候，既可以选择按值传递，也可以选择按引用传递，例如PHP。）
+然而在JavaScript当中，参数只能按值传递。一个经典的例子如下：
+function setName(obj) { obj.name = &#39;Jonathan&#39;; } var person = new Object(); setName(person); alert(person.name); //&#39;Jonathan&#39;  看起来很正常。
+我自己的臆想中把 person 传到函数中是这样的：
+function setName(person) { person.name = &#39;Jonathan&#39;; }  但是其中的实现方式并非如此。
+实际的情况应该是这样的：
+当变量 person 被当做参数传入函数中时，就被复制给了变量 obj，在这时 obj 和 person 指向的是同一个对象，所以当 obj.name = &amp;quot;Jonathan&amp;quot;时，函数外部 person 的 name 属性也会变为 Jonathan。
+再来看另一个例子：
+function setName(obj) { obj.name = &#39;Jonathan&#39;; obj = new Object(); obj.name = &#39;胡歌&#39;; } var person = new Object(); setName(person); alert(person.</description>
+    </item>
+    
+    <item>
+      <title>换电脑后如何在新电脑上更新博客</title>
+      <link>https://ximuli.github.io/1/changecomputer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/1/changecomputer/</guid>
+      <description>最近换用了小姐姐的笔记本电脑，用起来比我原来的破电脑流畅多了。
+其实我比较菜，在知乎上查换电脑如何更新Hexo博客，查到教人怎么做博客的，直到最近把电脑的各种软件安装好，搬着我的小梯子翻了半天，才找到一点有用的线索。在这之前我已经把整个博客的hexo文件夹复制打包放优盘里带到了上海……
+正文开始：
+首先当然是安装好Git和Node.js，打开Git Bash把npm源改成淘宝的cnpm ，然后安装Hexo
+cnpm install -g hexo  然后把我辛苦打包的hexo文件夹解压出来，进入目录。（自行选择放到哪个盘里）
+在hexo目录下打开Git Bash，就可以开始输入Hexo的命令了：
+hexo clean hexo g hexo s  在之前的文章中我们配置过ssh，那么现在应该重新换一个了吧，参考原文章就可以，《Hexo 踩坑笔记：利用Hexo和github pages服务搭建个人博客》 ，接下来就可以放心部署啦
+hexo d  然而我部署的时候报错了：
+not a git repository (or any of the parent directories): .git ......  直接把hexo目录下的 .deploy_git 文件夹删除，之后再重新部署，就没有问题啦。
+好像并没有什么难度哈，谁让我傻到把hexo文件夹全部复制打包了呢……</description>
+    </item>
+    
+  </channel>
+</rss>

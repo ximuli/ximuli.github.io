@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="leyili">
+  <meta name="description" content="乐亦栗的个人网站">
+  <meta name="keywords" content="前端，个人网站，前端笔记，随笔，杂文">
+  
+  <link rel="prev" href="https://ximuli.github.io/2019/2019-02-12-2019-%E5%B9%B4%E5%BC%80%E5%B7%A5%E5%A4%A7%E5%90%89/" />
+  <link rel="next" href="https://ximuli.github.io/2019/vimtutor/" />
+  <link rel="canonical" href="https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           HTML语义化 | 乐亦栗的个人网站
+       
+  </title>
+  <meta name="title" content="HTML语义化 | 乐亦栗的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ximuli.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "HTML语义化",
+    "headline" : "HTML语义化",
+    "description" : "本文最初于 2018-09-21 发布于 知乎 ，后在 《重学前端》 专栏的学习中，重新复习整理，发布于 Github 上，并计划写一系列前端学习相关的文章。欢迎 star 。\n HTML 语义化 简单来说，我们可以理解为：用正确的标签做正确的事情。\n例如：\n段落用 p 标签，标题用 h 系列标签，边栏用 aside 标签，主要内容用 main 标签。正确使用语义标签可以带来很多好处。\n为什么要关注 HTML 语义化？（为什么要使用语义类标签？） 对人：\n 增强可读性，对开发者更友好，在没有 CSS 的情况下也能较好地呈现网页的内容结构与代码结构，便于团队的开发和维护。  对机器：\n 有利于 SEO ，可以让搜索引擎爬虫更好地获取到更多有效信息，搜索引擎的爬虫依赖于标签来确定上下文和各个关键字的权重，有效提升网页的搜索量。 支持读屏软件，方便其他设备的解析（如屏幕阅读器、盲人阅读器等），利于无障碍阅读，提高可访问性。  一些语义类标签介绍 \x26lt;header\x26gt;\n用于展示介绍性内容，通常包含一组介绍性的或是辅助导航的实用元素。\n\x26lt;footer\x26gt;\n表示最近一个章节内容或者根节点元素的页脚。通常出现在尾部，包含一些作者信息、相关链接、版权信息等。\n\x26lt;aside\x26gt;\n表示跟文章主体不那么相关的部分，可能包含导航、广告等工具性质的内容。\n侧边栏是 aside，aside 不一定是侧边栏。\naside 和 header 中都可能出现导航 \x26lt;nav\x26gt;，header 中的导航多数是到文章的目录，而 aside 中的导航多是到关联页面或者整站地图。\n\x26lt;address\x26gt;\nfooter 中可以包含此元素。\n容易误用，并非表示单纯的地址，而是表示「文章作者的联系方式」。\n 可以让作者为它最近的 \x26lt;article\x26gt; 或者 \x26lt;body\x26gt; 祖先元素提供联系信息。在后一种情况下，它应用于整个文档。",
+    "inLanguage" : "zh-CN",
+    "author" : "leyili",
+    "creator" : "leyili",
+    "publisher": "leyili",
+    "accountablePerson" : "leyili",
+    "copyrightHolder" : "leyili",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-03-06 21:39:32 \x2b0000 UTC",
+    "dateModified" : "2019-03-06 21:39:32 \x2b0000 UTC",
+    "url" : "https:\/\/ximuli.github.io\/2019\/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96\/",
+    "wordCount" : "156",
+    "keywords" : [ "HTML","语义化", "乐亦栗的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">HTML语义化</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ximuli.github.io/" rel="author">leyili</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-03-06 itemprop="datePublished">March 6, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ximuli.github.io/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<blockquote>
+<p>本文最初于 2018-09-21 发布于 <a href="https://zhuanlan.zhihu.com/p/45116688" rel="nofollow noreferrer" target="_blank">知乎</a> ，后在 <a href="http://gk.link/a/102o0" rel="nofollow noreferrer" target="_blank">《重学前端》</a> 专栏的学习中，重新复习整理，发布于 <a href="https://github.com/ximuli/FED" rel="nofollow noreferrer" target="_blank">Github</a> 上，并计划写一系列前端学习相关的文章。欢迎 star 。</p>
+</blockquote>
+
+<h1 id="html-语义化">HTML 语义化</h1>
+
+<p>简单来说，我们可以理解为：用正确的标签做正确的事情。</p>
+
+<p>例如：</p>
+
+<p>段落用 p 标签，标题用 h 系列标签，边栏用 aside 标签，主要内容用 main 标签。<strong>正确使用语义标签可以带来很多好处。</strong></p>
+
+<!-- more -->
+
+<h1 id="为什么要关注-html-语义化-为什么要使用语义类标签">为什么要关注 HTML 语义化？（为什么要使用语义类标签？）</h1>
+
+<p>对人：</p>
+
+<ul>
+<li>增强可读性，对开发者更友好，在没有 CSS 的情况下也能较好地呈现网页的内容结构与代码结构，便于团队的开发和维护。</li>
+</ul>
+
+<p>对机器：</p>
+
+<ul>
+<li>有利于 SEO ，可以让搜索引擎爬虫更好地获取到更多有效信息，搜索引擎的爬虫依赖于标签来确定上下文和各个关键字的权重，有效提升网页的搜索量。</li>
+<li>支持读屏软件，方便其他设备的解析（如屏幕阅读器、盲人阅读器等），利于无障碍阅读，提高可访问性。</li>
+</ul>
+
+<h1 id="一些语义类标签介绍">一些语义类标签介绍</h1>
+
+<p><code>&lt;header&gt;</code></p>
+
+<p>用于展示介绍性内容，通常包含一组介绍性的或是辅助导航的实用元素。</p>
+
+<p><code>&lt;footer&gt;</code></p>
+
+<p>表示最近一个章节内容或者根节点元素的页脚。通常出现在尾部，包含一些作者信息、相关链接、版权信息等。</p>
+
+<p><code>&lt;aside&gt;</code></p>
+
+<p>表示跟文章主体不那么相关的部分，可能包含导航、广告等工具性质的内容。</p>
+
+<p>侧边栏是 aside，aside 不一定是侧边栏。</p>
+
+<p>aside 和 header 中都可能出现导航 <code>&lt;nav&gt;</code>，header 中的导航多数是到文章的目录，而 aside 中的导航多是到关联页面或者整站地图。</p>
+
+<p><code>&lt;address&gt;</code></p>
+
+<p>footer 中可以包含此元素。</p>
+
+<p>容易误用，并非表示单纯的地址，而是表示「文章作者的联系方式」。</p>
+
+<blockquote>
+<p>可以让作者为它最近的 <code>&lt;article&gt;</code> 或者 <code>&lt;body&gt;</code> 祖先元素提供联系信息。在后一种情况下，它应用于整个文档。</p>
+</blockquote>
+
+<p><code>&lt;hgroup&gt;</code></p>
+
+<p>表示标题组。</p>
+
+<p><code>&lt;em&gt;</code></p>
+
+<p>表示重音。同样一句话里如果重音不同，表达的意思也许大相径庭。</p>
+
+<p><code>&lt;strong&gt;</code></p>
+
+<p>表示文本十分重要，一般用粗体显示。</p>
+
+<p><code>&lt;abbr&gt;</code></p>
+
+<p>表示缩写。</p>
+
+<p><code>&lt;hr&gt;</code></p>
+
+<p>横向分割线，表示段落级元素之间的主题转换（例如，一个故事中的场景的改变，或一个章节的主题的改变）。</p>
+
+<p><code>&lt;blockqoute&gt;</code></p>
+
+<p>表示段落级引述内容。</p>
+
+<p><code>&lt;q&gt;</code></p>
+
+<p>表示行内的引述内容。</p>
+
+<p><code>&lt;cite&gt;</code></p>
+
+<p>表示引述的作品名。</p>
+
+<p><code>&lt;time&gt;</code></p>
+
+<p>表示24小时制时间。</p>
+
+<p><code>&lt;figure&gt;</code> 和 <code>&lt;figcaption&gt;</code></p>
+
+<p>两者常配合使用，表示一段独立的内容，并且作为一个独立的引用单元。</p>
+
+<blockquote>
+<p>当它属于主体(main flow)时，它的位置独立于主体。这个标签经常是在主文中引用的图片，插图，表格，代码段等等，当这部分转移到附录中或者其他页面时不会影响到主体。 &ndash; MDN</p>
+</blockquote>
+
+<pre><code class="language-html">&lt;figure&gt;
+  &lt;img src=&quot;https://xx.com/xx.png&quot; alt=&quot;An awesome picture&quot;&gt;	
+  &lt;figcaption&gt;这是一张图片。&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+
+<p><code>&lt;dfn&gt;</code></p>
+
+<p>表示术语的一个定义。</p>
+
+<pre><code class="language-html">&lt;p&gt;
+    &lt;dfn id=&quot;def-internet&quot;&gt;The Internet&lt;/dfn&gt; is a global system of interconnected networks that use the Internet Protocol Suite (TCP/IP) to serve billions of users worldwide.
+&lt;/p&gt;
+</code></pre>
+
+<p><code>&lt;nav&gt;</code> <code>&lt;ol&gt;</code> <code>&lt;ul&gt;</code></p>
+
+<p>导航栏、有序列表、无序列表</p>
+
+<p><code>&lt;pre&gt;</code> 中的内容会保持原有格式。</p>
+
+<p><code>&lt;samp&gt;</code> 元素用于标识计算机程序输出。</p>
+
+<p><code>&lt;code&gt;</code> 表示一段计算机代码。</p>
+
+<h1 id="总结">总结</h1>
+
+<p>对于语义类标签的使用也许会带来一些争议，我们应该遵循的原则是：</p>
+
+<blockquote>
+<p>尽量只用自己熟悉的语义标签。</p>
+
+<p>用对比不用好，不用比用错好。</p>
+</blockquote>
+
+<p>提示：</p>
+
+<p>你可以在百度或者谷歌搜索中输入「标签名称」+「MDN」这两个关键字来查看更加专业和详细的解释。</p>
+
+<p>另外安利一个 HTML 标签的学习链接：</p>
+
+<p><a href="https://htmlreference.io/" rel="nofollow noreferrer" target="_blank">HTML Reference - A free guide to all HTML elements and attributes</a></p>
+
+<p>（完）</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>leyili </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/>https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ximuli.github.io/tags/html/">
+                    #HTML</a></span>
+            
+            <span class="tag"><a href="https://ximuli.github.io/tags/%E8%AF%AD%E4%B9%89%E5%8C%96/">
+                    #语义化</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ximuli.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ximuli.github.io/2019/2019-02-12-2019-%E5%B9%B4%E5%BC%80%E5%B7%A5%E5%A4%A7%E5%90%89/" class="prev" rel="prev" title="2019 年开工大吉"><i class="iconfont icon-left"></i>&nbsp;2019 年开工大吉</a>
+         
+        
+        <a href="https://ximuli.github.io/2019/vimtutor/" class="next" rel="next" title="vim 入门">vim 入门&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ximuli.github.io/">leyili</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

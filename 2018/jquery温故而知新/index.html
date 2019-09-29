@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="leyili">
+  <meta name="description" content="乐亦栗的个人网站">
+  <meta name="keywords" content="前端，个人网站，前端笔记，随笔，杂文">
+  
+  <link rel="prev" href="https://ximuli.github.io/2018/dom-api/" />
+  <link rel="next" href="https://ximuli.github.io/2018/jsonp%E5%92%8Cajax/" />
+  <link rel="canonical" href="https://ximuli.github.io/2018/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           jQuery温故而知新 | 乐亦栗的个人网站
+       
+  </title>
+  <meta name="title" content="jQuery温故而知新 | 乐亦栗的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ximuli.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "jQuery温故而知新",
+    "headline" : "jQuery温故而知新",
+    "description" : "jQuery 是专注于简化 DOM 操作，AJAX 调用和 Event 处理的 JavaScript 库。它被 JavaScript 开发者频繁使用。\njQuery 使用 $(selector).action() 的格式给一个（或多个）元素绑定事件。具体来说，$(selector) 调用 jQuery 函数选择 selector 元素，并给它绑定一个叫 .action 的事件 API。\n 自己封装两个函数 本文以下面这段 HTML 作为示例：\n\x26lt;!DOCTYPE html\x26gt; \x26lt;html\x26gt; \x26lt;head\x26gt; \x26lt;meta charset=\x26quot;utf-8\x26quot;\x26gt; \x26lt;title\x26gt;JS Bin\x26lt;\/title\x26gt; \x26lt;\/head\x26gt; \x26lt;body\x26gt; \x26lt;ul\x26gt; \x26lt;li id=\x26quot;item1\x26quot;\x26gt;选项1\x26lt;\/li\x26gt; \x26lt;li id=\x26quot;item2\x26quot;\x26gt;选项2\x26lt;\/li\x26gt; \x26lt;li id=\x26quot;item3\x26quot;\x26gt;选项3\x26lt;\/li\x26gt; \x26lt;li id=\x26quot;item4\x26quot;\x26gt;选项4\x26lt;\/li\x26gt; \x26lt;li id=\x26quot;item5\x26quot;\x26gt;选项5\x26lt;\/li\x26gt; \x26lt;\/ul\x26gt; \x26lt;\/body\x26gt; \x26lt;\/html\x26gt;  封装一个函数，获取到一个节点的所有兄弟姐妹\nfunction getSiblings(node) {} function getSiblings(node) { var allChildren = node.parentNode.children; var arr = {length:0} for (let i = 0; i \x26lt; allChildren.",
+    "inLanguage" : "zh-CN",
+    "author" : "leyili",
+    "creator" : "leyili",
+    "publisher": "leyili",
+    "accountablePerson" : "leyili",
+    "copyrightHolder" : "leyili",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-06-24 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-06-24 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/ximuli.github.io\/2018\/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0\/",
+    "wordCount" : "630",
+    "keywords" : [ "JavaScript", "乐亦栗的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">jQuery温故而知新</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ximuli.github.io/" rel="author">leyili</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-06-24 itemprop="datePublished">June 24, 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ximuli.github.io/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<blockquote>
+<p><strong>jQuery</strong> 是专注于简化 <a href="https://developer.mozilla.org/en-US/docs/Glossary/DOM" rel="nofollow noreferrer" target="_blank">DOM</a> 操作，<a href="https://developer.mozilla.org/en-US/docs/Glossary/AJAX" rel="nofollow noreferrer" target="_blank">AJAX</a> 调用和 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Event" rel="nofollow noreferrer" target="_blank">Event</a> 处理的 <a href="https://developer.mozilla.org/en-US/docs/Glossary/JavaScript" rel="nofollow noreferrer" target="_blank">JavaScript</a> <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/%E5%BA%93" rel="nofollow noreferrer" target="_blank">库</a>。它被 JavaScript 开发者频繁使用。</p>
+
+<p>jQuery 使用 <code>$(selector).action()</code> 的格式给一个（或多个）元素绑定事件。具体来说，<code>$(selector)</code> 调用 jQuery 函数选择 <code>selector</code> 元素，并给它绑定一个叫 <code>.action</code> 的事件 <a href="https://developer.mozilla.org/en-US/docs/Glossary/API" rel="nofollow noreferrer" target="_blank">API</a>。</p>
+</blockquote>
+
+<h1 id="自己封装两个函数">自己封装两个函数</h1>
+
+<p>本文以下面这段 HTML 作为示例：</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;ul&gt;
+  &lt;li id=&quot;item1&quot;&gt;选项1&lt;/li&gt;
+  &lt;li id=&quot;item2&quot;&gt;选项2&lt;/li&gt;
+  &lt;li id=&quot;item3&quot;&gt;选项3&lt;/li&gt;
+  &lt;li id=&quot;item4&quot;&gt;选项4&lt;/li&gt;
+  &lt;li id=&quot;item5&quot;&gt;选项5&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>封装一个函数，获取到一个节点的所有兄弟姐妹</p>
+
+<pre><code class="language-javascript">function getSiblings(node) {}
+
+function getSiblings(node) {
+  var allChildren = node.parentNode.children;
+  var arr = {length:0}
+  for (let i = 0; i &lt; allChildren.length; i++) {
+    if (allChildren[i] !== node) {
+      arr[arr.length] = allChildren[i]  
+      //之所以不用 arr[i] 是因为可能会跳过，导致 arr 的 key 会不完整；
+      //使用 arr[arr.length] 可以很好的给伪数组添加完整的数字 key 
+      arr.length += 1
+    }
+  } 
+  return arr
+}
+</code></pre>
+
+<p>再封装一个，用来添加和删除 class</p>
+
+<pre><code class="language-javascript">function addClass(node, classes){}
+
+function addClass(node,classes) {  //classes的写法例如：{'a':false,'b':false,'c':true}
+  for (let key in classes) {
+    var value = classes[key]
+    if (value) {
+      node.classList.add(key)
+    }
+    else {
+      node.classList.remove(key)  // 一旦出现相同的代码，就存在优化的可能
+    }
+  }
+}
+
+// 看一下优化后的代码
+function addClass(node,classes) { 
+  for (let key in classes) {
+    var value = classes[key]
+    var methodName = value ? 'add' : 'remove'
+    node.classList[methodName](key)
+  }
+}
+
+</code></pre>
+
+<h1 id="命名空间">命名空间</h1>
+
+<p>一种设计模式。一个著名的库就是这样用的，yui</p>
+
+<pre><code class="language-javascript">window.ffdom = {}
+ffdom.getSiblings = getSiblings
+ffdom.addClass = addClass
+
+ffdom.getSiblings(node)
+ffdom.addClass(node, classes)
+</code></pre>
+
+<h1 id="能不能把-node-放在前面">能不能把 node 放在前面</h1>
+
+<pre><code class="language-javascript">node.getSiblings()
+node.addClass()
+</code></pre>
+
+<p>方法一：扩展 node 接口</p>
+
+<p>直接在 Node.prototype 上加函数</p>
+
+<pre><code class="language-javascript">Node.prototype.getSiblings = function() {
+  var allChildren = this.parentNode.children  //使用 this
+  var arr = {length:0}
+  for (let i = 0; i &lt; allChildren.length; i++) {
+    if (allChildren[i] !== this) {
+      arr[arr.length] = allChildren[i] 
+      arr.length += 1
+    }
+  } 
+  return arr
+}
+
+Node.prototype.addClass = function(classes) {
+    for (let key in classes) {
+    var value = classes[key]
+    var methodName = value ? 'add' : 'remove'
+    this.classList[methodName](key)
+  }
+}
+
+node.getSiblings()
+node.addClass()
+</code></pre>
+
+<p>方法二：新的接口</p>
+
+<pre><code class="language-javascript">window.Node2 = function(node) {
+    return {
+        getSilings: function() {
+          var allChildren = node.parentNode.children 
+          var arr = {length:0}
+          for (let i = 0; i &lt; allChildren.length; i++) {
+            if (allChildren[i] !== node) {
+              arr[arr.length] = allChildren[i] 
+              arr.length += 1
+            }
+          } 
+          return arr
+        },
+        addClass: function(classes) {
+          for (let key in classes) {
+            var value = classes[key]
+            var methodName = value ? 'add' : 'remove'
+            node.classList[methodName](key)
+          }
+        }
+    }
+}
+
+var node2 = Node2(node)
+node2.getSilings()
+node2.addClass()
+</code></pre>
+
+<p>我们可以把 Node2 写成 jQuery；除此之外，我们改写一下功能</p>
+
+<pre><code class="language-javascript">window.jQuery = function(nodeOrSelector) {
+  let nodes = {}
+  if (typeof nodeOrSelector === 'string') {
+    let temp = document.querySelectorAll(nodeOrSelector)  //伪数组
+    for (let i = 0; i &lt; temp.length; i++) {  // 通过 for 循环来去掉一些多余的 key
+      nodes[i] = temp[i]
+    }
+      nodes.length = temp.length
+  }  
+  else if (nodeOrSelector instanceof Node) {
+    nodes = {0: nodeOrSelector,length: 1}
+  }
+  
+  nodes.getSiblings = function() {}  //过于复杂先跳过
+  nodes.addClass = function(classes) {
+    classes.forEach((value) =&gt; {
+      for (let i = 0; i &lt; nodes.length; i++) {
+        nodes[i].classList.add(value)      
+      }      
+    }) 
+  }
+  
+  nodes.getText = function () {
+    let texts = []
+    for (let i = 0; i &lt; nodes.length; i++) {
+      texts.push(nodes[i].textContent)
+    }
+    return texts
+  }
+  nodes.setText = function (text) {
+    for (let i = 0; i &lt; nodes.length; i++) {
+      nodes[i].textContent = text
+    }
+    return texts
+  }
+  
+  //jQuery 非常讨厌使用 get 和 set ，经常会把这种操作合并，根据参数来决定 get 还是 set
+  nodes.text = function (text) {
+    if (text === undefined) {
+      let texts = []
+      for (let i = 0; i &lt; nodes.length; i++) {
+        texts.push(nodes[i].textContent)
+      }
+      return texts
+    }
+    else {
+      for (let i = 0; i &lt; nodes.length; i++) {
+        nodes[i].textContent = text
+      }
+      return texts
+    }
+  }
+  //在 jQuery 中随处可见类似的 API
+  
+  return nodes
+  
+}
+
+var node2 = jQuery('ul li')
+node2.addClass(['blue'])
+</code></pre>
+
+<h1 id="source-map">Source Map</h1>
+
+<p>jQuery 官网提供了几种不同的版本，你是否知道这些版本有什么区别？</p>
+
+<p>第一个地址是压缩后用于生产环境的版本，混淆版；</p>
+
+<p>第二个地址是未压缩的开发版本，未混淆；</p>
+
+<p>第三个地址是「 map file for jQuery 」，简单说，Source map就是一个信息文件，里面储存着位置信息。也就是说，转换后的代码的每一个位置，所对应的转换前的位置。</p>
+
+<p>可以查看 <a href="http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html" rel="nofollow noreferrer" target="_blank">这篇文章</a> 详细了解。</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="./../imgs/jQuery的版本.jpg" alt="jQuery的版本" class="lazyload"><figcaption class="image-caption">jQuery的版本</figcaption></figure></p>
+
+<h1 id="jquery-和-dom-api-获取的元素有什么联系和区别">jQuery 和 DOM API 获取的元素有什么联系和区别？</h1>
+
+<p>jQuery 获取的元素组成 jQuery 对象，只可以执行 jQuery 的方法；DOM API 获取的元素是 DOM 对象，只可以执行 DOM 的方法。</p>
+
+<pre><code class="language-html">&lt;div id=x&gt;&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-javascript">var div = document.getElementById('x')
+var $div = $('#x')  // jQuery 对象
+</code></pre>
+
+<p>联系（相互转换）：</p>
+
+<p>由 jQuery 对象转换为 DOM 对象，</p>
+
+<pre><code class="language-javascript">//1. jQuery 选择器返回的对象是伪数组，可以使用中括号来访问其中的某一项
+$div[0]   // DOM 对象
+
+//2. 使用 jQuery 提供的 get 方法
+$div.get(0)  // DOM 对象
+</code></pre>
+
+<p>由 DOM 对象转换为 jQuery 对象，</p>
+
+<pre><code class="language-javascript">// 对于 DOM 对象，只需用 $() 把 DOM 对象包装起来，就可得到 jQuery 对象
+$(div)  // jQuery 对象
+</code></pre>
+
+<p>学习资料：</p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2011/07/jquery_fundamentals.html" rel="nofollow noreferrer" target="_blank">jQuery设计思想 - 阮一峰的网络日志</a></p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2011/08/jquery_best_practices.html" rel="nofollow noreferrer" target="_blank">jQuery最佳实践 - 阮一峰的网络日志</a></p>
+
+<p><a href="https://zhuanlan.zhihu.com/p/22745278" rel="nofollow noreferrer" target="_blank">为什么推荐使用 === 不推荐 ==</a></p>
+
+<p>（完）</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>leyili </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ximuli.github.io/2018/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0/>https://ximuli.github.io/2018/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ximuli.github.io/tags/javascript/">
+                    #JavaScript</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ximuli.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ximuli.github.io/2018/dom-api/" class="prev" rel="prev" title="DOM-API"><i class="iconfont icon-left"></i>&nbsp;DOM-API</a>
+         
+        
+        <a href="https://ximuli.github.io/2018/jsonp%E5%92%8Cajax/" class="next" rel="next" title="JSONP 和 AJAX">JSONP 和 AJAX&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ximuli.github.io/">leyili</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

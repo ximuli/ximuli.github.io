@@ -1,0 +1,35 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>乐亦栗的个人网站 on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/</link>
+    <description>Recent content in 乐亦栗的个人网站 on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 26 May 2019 21:23:03 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://ximuli.github.io/posts/</link>
+      <pubDate>Sun, 26 May 2019 21:23:03 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>联系方式</title>
+      <link>https://ximuli.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/contact/</guid>
+      <description>&lt;p&gt;Github：&lt;a href=&#34;https://github.com/ximuli&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/ximuli&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;邮箱：leyili.dev@gmail.com&lt;/p&gt;
+
+&lt;p&gt;微信：wxid_jewel&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

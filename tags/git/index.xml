@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/git/</link>
+    <description>Recent content in Git on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git入门（1）</title>
+      <link>https://ximuli.github.io/2018/git-1/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/git-1/</guid>
+      <description>学习 Git 最好是在使用中学习，否则很难理解一些命令是什么意思。最好的学习方法就是，照着教程把命令挨个儿敲一遍，从实践中去理解和学习。
+ 下面就开始今天的学习：
+ 创建目录作为项目目录：mkdir git-demo-1
+ 进入目录：cd git-demo-1
+ git init 这句命令意义在于把当前目录初始化为 Git 管理的仓库，可以理解为本地仓库初始化。之后当前位置路径后面会多出一个 (master) 的标识。
+ ls -la 就会看到 .git 目录，忽略它。（假装这句不存在）
+ 在 git-demo-1 目录中添加任意文件
+ touch index.html mkdir css touch css/style.css  运行 git status -sb 可以看到文件前面有 ?? 号
+## No commits yet on master ?? css/ ?? index.html   这些 ?? 表示 git 目前还不知道你要怎么对待这些变动
+ 使用 git add 将文件添加到 「暂存区」
+ 可以一个个分别添加  git add index.</description>
+    </item>
+    
+  </channel>
+</rss>

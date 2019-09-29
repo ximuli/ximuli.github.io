@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTP on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/http/</link>
+    <description>Recent content in HTTP on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 14 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTTP入门</title>
+      <link>https://ximuli.github.io/2018/introduction-to-the-http/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/introduction-to-the-http/</guid>
+      <description>WWW的发明 WWW（World Wide Web）是Tim Berners-Lee （李爵士）于1989年至1992年间发明。
+主要的三个概念：
+ URI，（统一资源标识符：Uniform Resource Identifier） HTTP（超文本传输协议HyperText Transfer Protocol），两个电脑间传输内容的协议 HTML （超级文本标记语言：HyperText Markup Language）  URI 是什么 全称：Uniform Resource Identifier
+URI 分为 URL 和 URN
+URL（统一资源定位符Uniform Resource Locator）
+URN（统一资源名称Uniform Resource Name）
+URL的组成：
+https://www.baidu.com/s?wd=hello&amp;amp;rsv_spt=1#5 协议 https:// 域名 www.baidu.com 路径 /s 查询参数 ?wd=hello&amp;amp;rsv_spt=1 锚点 #5  DNS 全称：域名系统 &amp;ndash; Domain Name System
+ 输入域名 输出IP  请求 Server + Client + HTTP
+ 浏览器负责发起请求 服务器在 80 端口接收请求 服务器负责返回内容（响应） 浏览器负责下载响应内容  HTTP的作用就是指导浏览器和服务器如何进行沟通。</description>
+    </item>
+    
+  </channel>
+</rss>

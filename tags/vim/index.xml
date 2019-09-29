@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/vim/</link>
+    <description>Recent content in vim on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 14 May 2019 21:06:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vim 入门</title>
+      <link>https://ximuli.github.io/2019/vimtutor/</link>
+      <pubDate>Tue, 14 May 2019 21:06:36 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2019/vimtutor/</guid>
+      <description>本文的初衷
+从我知道 vim 开始我就有心学习并尝试过几次，每次都是暂时的心血来潮，最终全部不了了之，就连最基本的 vimtutor 我都是学个两三节就半途而废，所以这次干脆写篇文章，利用几次学习把这篇文章完善起来。既方便自己坚持学习记录，又方便在之后使用中查看和复习。
+如果正在看这篇文章的你已经是个老手，或者已经完整练过多次 vimtutor ，那么很遗憾本文并不会对你有更多的帮助。
+安装 Windows 安装 Git Bash 或者 cmder
+Linux 和 MacOS 无需安装
+单词 Vim 中的快键键都是有语义的，如果了解下面这些单词，相信你记住快捷键也不是什么难事。
+quit
+write/read
+yank
+paste
+delete
+change
+find
+word
+forward/backward
+up/down
+insert/append
+do/undo/redo
+replace
+vim 中的模式与模式切换 注意：
+后文中带尖括号的描述表示键盘按键，比如 &amp;lt;回车&amp;gt; 是指回车按键。
+在终端（我这里在 windows 下使用的 Gitbash）输入 vim &amp;lt;回车&amp;gt; 即可进入 Vim 编辑器。
+Vim 有多种模式，分别是：
+ 正常模式 （normal） 插入模式 （insert） 冒号模式 （或者叫命令模式 command） 可视模式 （visual）  启动 Vim （在终端输入 vim &amp;lt;回车&amp;gt;）后，并不能直接输入字符，vim 默认处于「正常模式」。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>语义化 on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/%E8%AF%AD%E4%B9%89%E5%8C%96/</link>
+    <description>Recent content in 语义化 on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 06 Mar 2019 21:39:32 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/%E8%AF%AD%E4%B9%89%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML语义化</title>
+      <link>https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/</link>
+      <pubDate>Wed, 06 Mar 2019 21:39:32 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/</guid>
+      <description>本文最初于 2018-09-21 发布于 知乎 ，后在 《重学前端》 专栏的学习中，重新复习整理，发布于 Github 上，并计划写一系列前端学习相关的文章。欢迎 star 。
+ HTML 语义化 简单来说，我们可以理解为：用正确的标签做正确的事情。
+例如：
+段落用 p 标签，标题用 h 系列标签，边栏用 aside 标签，主要内容用 main 标签。正确使用语义标签可以带来很多好处。
+为什么要关注 HTML 语义化？（为什么要使用语义类标签？） 对人：
+ 增强可读性，对开发者更友好，在没有 CSS 的情况下也能较好地呈现网页的内容结构与代码结构，便于团队的开发和维护。  对机器：
+ 有利于 SEO ，可以让搜索引擎爬虫更好地获取到更多有效信息，搜索引擎的爬虫依赖于标签来确定上下文和各个关键字的权重，有效提升网页的搜索量。 支持读屏软件，方便其他设备的解析（如屏幕阅读器、盲人阅读器等），利于无障碍阅读，提高可访问性。  一些语义类标签介绍 &amp;lt;header&amp;gt;
+用于展示介绍性内容，通常包含一组介绍性的或是辅助导航的实用元素。
+&amp;lt;footer&amp;gt;
+表示最近一个章节内容或者根节点元素的页脚。通常出现在尾部，包含一些作者信息、相关链接、版权信息等。
+&amp;lt;aside&amp;gt;
+表示跟文章主体不那么相关的部分，可能包含导航、广告等工具性质的内容。
+侧边栏是 aside，aside 不一定是侧边栏。
+aside 和 header 中都可能出现导航 &amp;lt;nav&amp;gt;，header 中的导航多数是到文章的目录，而 aside 中的导航多是到关联页面或者整站地图。
+&amp;lt;address&amp;gt;
+footer 中可以包含此元素。
+容易误用，并非表示单纯的地址，而是表示「文章作者的联系方式」。
+ 可以让作者为它最近的 &amp;lt;article&amp;gt; 或者 &amp;lt;body&amp;gt; 祖先元素提供联系信息。在后一种情况下，它应用于整个文档。</description>
+    </item>
+    
+  </channel>
+</rss>

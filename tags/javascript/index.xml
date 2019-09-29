@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/javascript/</link>
+    <description>Recent content in JavaScript on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 26 May 2019 21:23:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript中那些关于坐标和距离的属性与方法</title>
+      <link>https://ximuli.github.io/2019/javascript%E4%B8%AD%E9%82%A3%E4%BA%9B%E5%85%B3%E4%BA%8E%E5%9D%90%E6%A0%87%E5%92%8C%E8%B7%9D%E7%A6%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sun, 26 May 2019 21:23:03 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2019/javascript%E4%B8%AD%E9%82%A3%E4%BA%9B%E5%85%B3%E4%BA%8E%E5%9D%90%E6%A0%87%E5%92%8C%E8%B7%9D%E7%A6%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%96%B9%E6%B3%95/</guid>
+      <description>一 前言 在前端开发中总会遇到各种各样需要使用或计算坐标和距离的情况，但是这些属性和方法众多，全部熟练地记下来并非是一件易事，大多只能现查，耗费不少时间精力，于是便有了整理记录的想法，即加深了印象，又方便随时查阅。
+二 window 对象  浏览器里面，window 对象（注意，w为小写）指当前的浏览器窗口。
+它也是当前页面的顶层对象，即最高一层的对象，所有其他对象都是它的下属。一个变量如果未声明，那么默认就是顶层对象的属性。
+摘自《阮一峰 JavaScript 教程》
+ 位置大小属性 window.screenX , window.screenY 只读属性
+返回浏览器窗口左上角相对于当前屏幕左上角的水平距离和垂直距离（单位像素）。
+window.innerHeight , window.innerWidth 只读属性
+返回网页在当前窗口中可见区域的高度和宽度，即「视口」（viewport）的大小（单位像素）。
+注意，这两个属性包括滚动条的高度和宽度。
+window.outerHeight , window.outerWidth 只读属性
+返回浏览器窗口的高度和宽度，包括浏览器菜单和边框（单位像素）。
+window.scrollX , window.scrollY 只读属性
+别名： window.pageXOffset , window.pageYOffset
+分别返回页面的水平滚动距离和垂直滚动距离，单位都是像素。
+ 注意，这两个属性的返回值不是整数，而是双精度浮点数。如果页面没有滚动，它们的值就是0。
+摘自《阮一峰 JavaScript 教程》
+为了跨浏览器兼容性，请使用 window.pageXOffset 代替 window.scrollX。另外，旧版本的 IE（&amp;lt;9）两个属性都不支持，必须通过其他的非标准属性来解决此问题。
+摘自 MDN ：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollX
+ window 对象的方法 window.scrollTo() , window.scroll() , window.scrollBy() window.scrollTo 方法 &amp;mdash;&amp;gt; 别名： window.scroll 方法
+ 用于将文档滚动到指定位置。</description>
+    </item>
+    
+    <item>
+      <title>Cookie注册与登录</title>
+      <link>https://ximuli.github.io/2018/cookie/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/cookie/</guid>
+      <description>Cookie Cookie 是什么  Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据。
+ 浏览器需要保存这段数据，不得轻易删除。
+ 此后每次浏览器访问该服务器，都必须带上这段数据。
+  Cookie 就是这么简单，这就是 Web 开发里 Cookie 的含义。
+Cookie 的特点  服务器通过 Set-Cookie 响应头设置 Cookie
+// node.js response.setHeader(&#39;Set-Cookie&#39;,&#39;xxxxxx&#39;)  浏览器得到 Cookie 之后，每次请求都要带上 Cookie
+ 服务器读取 Cookie 就知道登录用户的信息
+  Cookie 的作用 Cookie 一般有两个作用。
+第一个作用是识别用户身份。
+第二个作用是记录历史。
+相关问题 问：在 Chrome 登录了得到 Cookie，用 Safari 访问，Safari 会带上 Cookie 吗
+no
+问：Cookie 存在哪
+Windows 存在 C 盘的一个文件里
+问：Cookie会被用户篡改吗？
+可以，Session 来解决这个问题，防止用户篡改
+问：Cookie 有效期吗？
+默认有效期20分钟左右，不同浏览器策略不同
+后端可以强制设置有效期，具体语法看 MDN</description>
+    </item>
+    
+    <item>
+      <title>ES6 系列：let 和 const</title>
+      <link>https://ximuli.github.io/2018/es6-let-and-const/</link>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/es6-let-and-const/</guid>
+      <description>let 和 const let  我们不应该再使用 var 关键字。
+ let 的出现是为了方便地使用局部变量。
+使用 var 关键词会有变量声明提升，let 则不会。
+{ let a = 1; window.jewel = function() { console.log(a) } } console.log(a) // Uncaught ReferenceError: a is not defined  let 的作用域只管到花括号。
+{ let a = 1 } console.log(a) // Uncaught ReferenceError: a is not defined  let 可以嵌套。会出现「临时死区」（Temp Dead Zone），如果在声明语句之前使用变量就会报错。
+ JS 终于想通了，一个变量应该先声明再使用。
+ 例如下面代码，如果在 let 声明之前使用 a 就会报错。
+{ let a =1 console.</description>
+    </item>
+    
+    <item>
+      <title>ES6 系列：类</title>
+      <link>https://ximuli.github.io/2018/es6-class/</link>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/es6-class/</guid>
+      <description>原型 原型是啥：https://www.zhihu.com/question/56770432/answer/315342130
+原型就是共有属性
+JS 只用一个很简单的规则就实现了对象复用
+类 类是啥？
+依据上图我们来自己写个例子：
+// 如何用原型模拟类 var 人类共有属性 = { walk() { console.log(&#39;走两步&#39;) }, species: &#39;人类&#39; } function createPerson(name,age) { var obj = {} obj.name = name || &#39;&#39; obj.age = age || 18 obj.__proto__ = 人类共有属性 return obj } createPerson(&#39;jewel&#39;)  结果如下：
+ES 6 中的类 语法如下：
+class Person { constructor(name,age) { this.name = name this.age = 18 } walk() { console.log(&#39;走两步&#39;) } }  contructor 里写的是自有属性，外写的是共有属性。我们可以新建一个对象来验证一下。</description>
+    </item>
+    
+    <item>
+      <title>JSONP 和 AJAX</title>
+      <link>https://ximuli.github.io/2018/jsonp%E5%92%8Cajax/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/jsonp%E5%92%8Cajax/</guid>
+      <description>首先我们应该明白，JSONP 和 JSON 没什么关系。
+ JSON 全称 JavaScript Object Notation
+是一种由道格拉斯·克罗克福特构想和设计、轻量级的数据交换语言。注意，这是一门语言。
+JSONP 什么是 JSONP ？ 请求方：前端（浏览器）
+响应方：后端（服务器）
+请求方动态创建 script，将 src 指向响应方，同时传一个查询参数 ?callback=xxx
+响应方根据查询参数 callback，构造形如 xxx.call(undefined, &amp;lsquo;你要的数据&amp;rsquo;) 这样的响应
+浏览器接收到响应，就会执行 xxx.call(undefined, &amp;lsquo;你要的数据&amp;rsquo;)
+那么请求方就知道了他要的数据
+这就是 JSONP
+关于 JSONP 的一些约定  callbackName -&amp;gt; callback xxx -&amp;gt; 随机数 frank12312312312321325() jQuery 用法
+$.ajax({ url: &amp;quot;http://jack.com:8002/pay&amp;quot;, dataType: &amp;quot;jsonp&amp;quot;, success: function( response ) { if(response === &#39;success&#39;){ amount.innerText = amount.innerText - 1 } } })   JSONP 为什么不支持 POST 请求？  JSONP 是通过动态创建 script 实现的 创建 script 只能发送 GET ，没有办法发送 POST 。  AJAX 异步的 JavaScript 和 XML （Asynchronous Javascript And XML）</description>
+    </item>
+    
+    <item>
+      <title>jQuery温故而知新</title>
+      <link>https://ximuli.github.io/2018/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0/</link>
+      <pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/jquery%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0/</guid>
+      <description>jQuery 是专注于简化 DOM 操作，AJAX 调用和 Event 处理的 JavaScript 库。它被 JavaScript 开发者频繁使用。
+jQuery 使用 $(selector).action() 的格式给一个（或多个）元素绑定事件。具体来说，$(selector) 调用 jQuery 函数选择 selector 元素，并给它绑定一个叫 .action 的事件 API。
+ 自己封装两个函数 本文以下面这段 HTML 作为示例：
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;JS Bin&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li id=&amp;quot;item1&amp;quot;&amp;gt;选项1&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item2&amp;quot;&amp;gt;选项2&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item3&amp;quot;&amp;gt;选项3&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item4&amp;quot;&amp;gt;选项4&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;quot;item5&amp;quot;&amp;gt;选项5&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  封装一个函数，获取到一个节点的所有兄弟姐妹
+function getSiblings(node) {} function getSiblings(node) { var allChildren = node.parentNode.children; var arr = {length:0} for (let i = 0; i &amp;lt; allChildren.</description>
+    </item>
+    
+    <item>
+      <title>DOM-API</title>
+      <link>https://ximuli.github.io/2018/dom-api/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/dom-api/</guid>
+      <description>对 DOM 的理解  文档对象模型：Document Object Model D 在此表示 XML 文档，HTML 是 XML 的一种衍生品；O 表示 Object ，在内存中，通过构造函数（如 Document，Element，Text，Comment 等等）构造出对象；M 表示 Model，表示 Document 和 Object 映射关系的模型；所以称为 DOM 页面中的节点 ===&amp;gt; 通过构造函数 ===&amp;gt; 对象，这就是 DOM 的主要功能  Node 对 Node 的理解  Node 即节点，分为 Document，Element，Text 以及其他不重要的。 JS里的对象，都是继承自 Object 的；页面里的对象，都是继承自 Node，跟 NodeJS 没关系，这里的 Node 是一个函数，一般我们不会自己去用这个函数 Node 最终又是继承自 Object 的
+// 为了便于理解，我们可以在控制台打出节点，看一下它们的原型链上到底存在些什么东西 console.dir(document.body) console.dir(document.documentElement) //document.documentElement 返回文档对象的根元素   下面这张图一定可以帮助你更加理解 Node：
+属性 childNodes,firstChild,innerText,lastChild,nextSibling,nodeName,nodeType,nodeValue,outerText
+ownerDocument,parentElement,parentNode,previousSibling,textContent
+ Node.</description>
+    </item>
+    
+    <item>
+      <title>JS函数</title>
+      <link>https://ximuli.github.io/2018/js%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E5%87%BD%E6%95%B0/</guid>
+      <description>函数的五种声明方式  具名函数
+function f(x,y){ return x+y } f.name // &#39;f&#39;  匿名函数
+var f f = function(x,y){ return x+y } f.name // &#39;f&#39;  具名函数赋值
+var f f = function f2(x,y){ return x+y } f.name // &#39;f2&#39; console.log(f2) // Uncaught ReferenceError: f2 is not defined  window.Function （不推荐）
+var f = new Function(&#39;x&#39;,&#39;y&#39;,&#39;return x+y&#39;) f.name // &amp;quot;anonymous&amp;quot;  箭头函数
+var f = (x,y) =&amp;gt; { return x+y } var sum = (x,y) =&amp;gt; x+y //等同于 var sum = (x,y) =&amp;gt; {return x+y} var n2 = n =&amp;gt; n*n //等同于 var n2 = (n) =&amp;gt; {return n*n}    注意函数的 name 属性在不同的声明方法中各种不同的表现。</description>
+    </item>
+    
+    <item>
+      <title>JS数组</title>
+      <link>https://ximuli.github.io/2018/js%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E6%95%B0%E7%BB%84/</guid>
+      <description>标准库  Number String Boolean 不加new 返回一个基本类型的值，加new返回复杂类型(对象)
+Object Array Function 加new不加new都一样，是返回复杂类型(对象)
+ 数组的本质  人类理解：数组就是数据的有序集合 JS理解：数据就是原型链中有 Array.prototype 的对象
+ 伪数组  有 0,1,2,3,4,5&amp;hellip;n,length 这些 key 的对象 原型链中没有 Array.prototype  这样的对象就是伪数组
+目前知道的伪数组有：
+ arguments 对象 document.querySelectAll(&amp;lsquo;div&amp;rsquo;) 返回的对象  数组的 forEach() 自己实现一个简单的 forEach 函数：
+function forEach(arr, fn) { for(let i = 0; i &amp;lt; arr.length; i++) { fn(arr[i],i) } } forEach([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;],function(value,key) {console.log(value,key)})  来看另一种方法：
+var obj = {0:&#39;a&#39;,1:&#39;b&#39;, length: 2} obj.forEach = function(fn) { for (let i = 0; i&amp;lt;this.</description>
+    </item>
+    
+    <item>
+      <title>原型与原型链</title>
+      <link>https://ximuli.github.io/2018/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <description>对象，原型与原型链 全局对象 ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）
+window 就是一个哈希表，有很多属性。
+window 的属性就是全局变量。
+在浏览器下， window 的属性可以分为两类：
+ ECMAScript 规定的，例如 parseInt() ，parseFloat() ，Number() ，String()，Boolean()， setTimeout() 等等 浏览器私有属性，例如 alert 弹框提示 ， propmt 用户填写 ， confirm 确认， console 等，document 也是。 DOM也有标准，由 W3C 制定。  Number() Number() 有两种用法：
+ Number(xxx) 用来把 xxx 转换为数字 声明一个 number 对象，包装成对象，有很多便捷的操作可以用
+var n = new Number(1) n.valueOf() // 1 n.toString() // &amp;quot;1&amp;quot; n.toFixed(3) // &amp;quot;1.000&amp;quot; n.toExponential() &amp;quot;1e+0&amp;quot;   但是在 Javascript 中，我们很少用第二种方法。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript里的类型转换</title>
+      <link>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>JS里的类型转换 任意类型转字符串  xxx.toString()
+(1).toString() // &amp;quot;1&amp;quot; true.toString() // &amp;quot;true&amp;quot; null.toString() // Uncaught TypeError: Cannot read property &#39;toString&#39; of null undefined.toString() // Uncaught TypeError: Cannot read property &#39;toString&#39; of undefined {}.toString() // Uncaught SyntaxError: Unexpected token . ({}).toString() // &amp;quot;[object Object]&amp;quot;  String(xxx)
+String(1) // &amp;quot;1&amp;quot; String(true) // &amp;quot;true&amp;quot; String(null) // &amp;quot;null&amp;quot; String(undefined) // &amp;quot;undefined&amp;quot; String({}) // &amp;quot;[object Object]&amp;quot;  xxx + &#39;&#39;，当然这种方法更简便
+1 + &#39;&#39; // &amp;quot;1&amp;quot; true + &#39;&#39; // &amp;quot;true&amp;quot; null + &#39;&#39; // &amp;quot;null&amp;quot; undefined + &#39;&#39; // &amp;quot;undefined&amp;quot; {} + &#39;&#39; // 0 var obj = {} obj + &#39;&#39; // &amp;quot;[object Object]&amp;quot;   任意类型转布尔  Boolean(xxx) !</description>
+    </item>
+    
+    <item>
+      <title>JavaScript里的数据类型</title>
+      <link>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>JS里的数据类型 number  二进制：0b 开头 八进制：0开头 十六进制：0x 开头  string  单引号和双引号 空字符串和空格字符串 转义， var a = &#39;\&#39;&#39; 多行字符串
+var a = &#39;12345\ 67890&#39; a //&amp;quot;1234567890&amp;quot; //如果斜杠后面有空格，则会报错 //推荐： var b = &#39;12345&#39; + &#39;67890&#39; b //&amp;quot;1234567890&amp;quot; //ES6新语法 var c = `12345 67890` c /* &amp;quot;12345 67890&amp;quot; */ c.length // 11 (因为有回车)   undefined 和 null  变量没有赋值，则为 undefined 有一个对象 object，但是现在还不想给值，就可以设置为 null，表示 空对象  object  即为哈希表 复杂类型，由简单类型组成 key 其实是字符串，可以省略；但是某些情况下不可以省略，比如有一些特殊字符，或者以数字开头 可以使用 delete 来删除对象中的键值对</description>
+    </item>
+    
+    <item>
+      <title>变量声明提升（声明前置）</title>
+      <link>https://ximuli.github.io/2018/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%8D%87%E5%A3%B0%E6%98%8E%E5%89%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%8D%87%E5%A3%B0%E6%98%8E%E5%89%8D%E7%BD%AE/</guid>
+      <description>参考：《你不知道的JavaScript》上卷 第一部分 第四章
+ 原理 引擎会在解释 JavaScript 代码之前首先对其进行编译。编译阶段中的一部分工作就是找到所有的声明，并用合适的作用域将它们关联起来。
+正确的思路：包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。
+例子 例子1：
+a = 2; var a; console.log(a); // 2  console.log(a); // undefined var a = 2;   只有声明本身会被提升，而赋值或其他运行逻辑会留在原地。如果提升改变了代码执行的顺序，会造成非常严重的破坏。  例子2：
+foo(); function foo() { console.log(a); //undefined var a = 2; }  foo 函数的声明（这个例子还包括实际函数的隐含值）被提升了，因此第一行中的调用可以正常执行。
+ 另外值得注意的是，每个作用域都会进行提升操作。
+ 声明会被会被提升，但是函数表达式却不会被提升。
+  看下面改造后的例子：
+foo(); var foo = function () { console.log( a ); var a = 2; } // 报错： Uncaught TypeError: foo is not a function  讲解（来自饥人谷）  在进入一个执行环境后，先把 var 和 function 声明的变量前置， 再去顺序执行代码。</description>
+    </item>
+    
+    <item>
+      <title>高阶函数</title>
+      <link>https://ximuli.github.io/2018/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</guid>
+      <description>参考资源：廖雪峰的官方网站
+ map() 、reduce() 、filter() 、sort()
+map  不会改变原数组  map() 方法定义在 JavaScript 的 Array 中，我们调用 Array 的 map() 方法，传入我们自己的函数，就得到了一个新的 Array 作为结果。
+&#39;use strict&#39;; function pow(x) { return x*x; }; var arr = [2,3,4]; var result = arr.map(pow); // 数组的 map() 方法会返回一个新数组 console.log(arr); //[2,3,4] 原数组不会改变 console.log(result); //[4,9,16]  简单来说，就是把函数 pow() 作用到 Array 的每一个元素并把结果生成一个新的 Array。
+reduce  不会改变原数组  Array 的 reduce() 方法把一个函数（此函数必须有两个参数 ）作用在 Array 的每一项上，并把结果继续和序列的下一个元素做累计的运算。
+来看几个简单的例子：
+对一个 Array 求和</description>
+    </item>
+    
+    <item>
+      <title>FCC之路：Seek and Destroy（摧毁数组）</title>
+      <link>https://ximuli.github.io/2017/fcc%E4%B9%8B%E8%B7%AFseek-and-destroy%E6%91%A7%E6%AF%81%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/fcc%E4%B9%8B%E8%B7%AFseek-and-destroy%E6%91%A7%E6%AF%81%E6%95%B0%E7%BB%84/</guid>
+      <description>实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。 例子： destroyer([1, 2, 3, 1, 2, 3], 2, 3) 应该返回 [1, 1].
+ 一些简单的算法题我总是能卡好久，之所以说简单，是因为苦苦思考无结果后到网上找答案，经常是随便几行代码就行搞定。然而这些网上的答案很多都是写一堆废话，然后粘几行没有注释的代码，看起来颇为吃力，根本不知道该怎么理解。暂且做个记录。
+解法1 function destroyer(arr) { // Remove all the values var arr_arg = arguments; // 提前获取destroyer函数的arguments对象 for(var i = 1; i &amp;lt; arr_arg.length; i++){ arr = arr.filter(function(val){ return arr_arg[i] !== val; // 其他倒还好，就是不理解这行的意思 }); } return arr; } destroyer([1, 2, 3, 1, 2, 3], 2, 3);  我好像明白了一点，先来看一段MDN上关于filter()方法的描述： &amp;gt;filter 为数组中的每个元素调用一次 callback函数，并利用所有使得 callback返回 true 或 等价于 true 的值的元素创建一个新数组。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript中的布尔操作符</title>
+      <link>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B0%94%E6%93%8D%E4%BD%9C%E7%AC%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B0%94%E6%93%8D%E4%BD%9C%E7%AC%A6/</guid>
+      <description>布尔操作符 逻辑非 ( ! ) 逻辑非操作符可以应用于ECMAScript中的任何值。无论这个值是什么数据类型，这个操作符都会返回一个布尔值。
+逻辑非操作符首先会将它的操作数转换为一个布尔值，然后再对其求反。（ps：此处应该可以理解为先用 Boolean() 转型函数将操作数转换为布尔值，然后对其求反。 2018-1-7 ）
+同时使用两个逻辑非操作符，就会模拟Boolean() 转型函数的行为。
+逻辑与 ( &amp;amp;&amp;amp; )、逻辑或( || ) 这两者都属于短路操作符 ，即：如果第一个操作数能够决定结果，那么就不会再对第二个操作数求值。
+对于逻辑与操作符 ( &amp;amp;&amp;amp; ) 而言，
+如果第一个操作数是 false ，则无论第二个操作数是什么值，结果都必定是 false 。
+逻辑与的真值表如下：
+   第一个操作数 第二个操作数 结果     ture true true   true false false   false true false   false false false    逻辑与操作可以应用于任何类型的操作数，而不仅仅是布尔值。在有一个操作数不是布尔值的情况下，逻辑与操作就不一定返回布尔值；此时，它遵循如下规则：
+ 如果第一个操作数是对象，则返回第二个操作数； 如果第二个操作数是对象，则只有在第一个操作数的求值结果为 true 的情况下才会返回该对象； 如果两个操作数都是对象，则返回第二个操作数； 如果第一个操作数是 null ，则返回 null ； 如果第一个操作数是 NaN ，则返回 NaN ； 如果第一个操作数是 undefined ，则返回 undefined 。  ————————————————————分割线 ——————————————————————</description>
+    </item>
+    
+    <item>
+      <title>JavaScript中的递增和递减操作符</title>
+      <link>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F%E6%93%8D%E4%BD%9C%E7%AC%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/1/javascript%E4%B8%AD%E7%9A%84%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F%E6%93%8D%E4%BD%9C%E7%AC%A6/</guid>
+      <description>递增和递减操作符属于一元操作符（只能操作一个值的操作符），各有两个版本：前置型和后置型。
+ 前置和后置在一般情况下没什么问题（此处说法十分不严谨，到底何为一般情况？一般情况有多少？由于不严谨导致后期遇到问题根本难以解决，详见以下2018年2月5日更新），例如当语句中只有递增或递减这一个操作：
+var age = 24; age++; //25 var num = 24; ++num; //25  前置型递增和递减操作，变量的值都是在语句被求值以前改变的。（有所调整，见2018.2.5更新）
+var num1 = 2; var num2 = 20; var num3 = --num1 + num2; //21 num1; //1  后置型递增和递减操作，变量的值都是在语句被求值之后改变的。（有所调整，见2018.2.5更新）
+var num1 = 2; var num2 = 20; var num3 = num1-- + num2; //22 num1; //1  2018年2月5日更新：
+遇到一道题目，卡了很久没有理解。
+var fn = function (i) { return function() { return i++; } }(10); var a = fn(); var b = fn(); console.</description>
+    </item>
+    
+    <item>
+      <title>《JavaScript高级程序设计》4.1.3--传递参数</title>
+      <link>https://ximuli.github.io/1/javascript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A14.1.3-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/1/javascript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A14.1.3-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</guid>
+      <description>章节 4.1.3 ——传递参数  page：70
+ ECMAScript 中所有函数的参数都是按值传递的。（这里之所以这样写，是因为某些编程语言在传递参数的时候，既可以选择按值传递，也可以选择按引用传递，例如PHP。）
+然而在JavaScript当中，参数只能按值传递。一个经典的例子如下：
+function setName(obj) { obj.name = &#39;Jonathan&#39;; } var person = new Object(); setName(person); alert(person.name); //&#39;Jonathan&#39;  看起来很正常。
+我自己的臆想中把 person 传到函数中是这样的：
+function setName(person) { person.name = &#39;Jonathan&#39;; }  但是其中的实现方式并非如此。
+实际的情况应该是这样的：
+当变量 person 被当做参数传入函数中时，就被复制给了变量 obj，在这时 obj 和 person 指向的是同一个对象，所以当 obj.name = &amp;quot;Jonathan&amp;quot;时，函数外部 person 的 name 属性也会变为 Jonathan。
+再来看另一个例子：
+function setName(obj) { obj.name = &#39;Jonathan&#39;; obj = new Object(); obj.name = &#39;胡歌&#39;; } var person = new Object(); setName(person); alert(person.</description>
+    </item>
+    
+  </channel>
+</rss>

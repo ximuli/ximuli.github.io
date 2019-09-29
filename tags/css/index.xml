@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/css/</link>
+    <description>Recent content in CSS on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 30 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS 温故而知新</title>
+      <link>https://ximuli.github.io/2018/css/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/css/</guid>
+      <description>中文学习资源只看大 V 的（毕竟他们要维护形象不能瞎写），英文资源看 CSS Tricks、MDN 和 Codrops。书的话作用不大，最权威的书其实是文档。
+如果你想快速上手，就先写小 demo 再学理论。
+如果你想一鸣惊人，就仔细看 CSS 规范文档。
+查询CSS文档请直接搜索 CSS spec
+ 知识点 引入CSS的四种方式 style 属性、style 标签、css link、css import
+高度由什么决定  div 高度由其内部文档流元素的高度总和决定。
+ 文档流 问：什么是文档流？
+答：文档内元素的流动方向。
+需要关注的几点：  内联元素从左向右流动，如果容器宽度不够，就换行继续从左向右流动 块元素独占一行，依次从上往下流 如果一个内联元素中有一个很长的单词，那么容器宽度不够时默认是不会分成两段显示的。因为浏览器认为这个单词是一个整体。 CSS 中 word-break 属性可以控制这种情况。  内联元素的高度由什么决定？  无力吐槽 o(╥﹏╥)o line-height
+ 与字体和字体设计师设置的一些参数有关。
+  参考：深入理解 CSS：字体度量、line-height 和 vertical-align
+布局与居中 左右横向布局 float + clearfix
+给所有子元素添加 float ，给其父元素添加 clearfix 。
+.clearfix:after { content: &amp;quot;&amp;quot;; display: block; clear: both; }  注：此方法同样适用于左中右布局。</description>
+    </item>
+    
+  </channel>
+</rss>

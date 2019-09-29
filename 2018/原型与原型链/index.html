@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="leyili">
+  <meta name="description" content="乐亦栗的个人网站">
+  <meta name="keywords" content="前端，个人网站，前端笔记，随笔，杂文">
+  
+  <link rel="prev" href="https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+  <link rel="next" href="https://ximuli.github.io/2018/js%E6%95%B0%E7%BB%84/" />
+  <link rel="canonical" href="https://ximuli.github.io/2018/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           原型与原型链 | 乐亦栗的个人网站
+       
+  </title>
+  <meta name="title" content="原型与原型链 | 乐亦栗的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ximuli.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "原型与原型链",
+    "headline" : "原型与原型链",
+    "description" : "对象，原型与原型链 全局对象 ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）\nwindow 就是一个哈希表，有很多属性。\nwindow 的属性就是全局变量。\n在浏览器下， window 的属性可以分为两类：\n ECMAScript 规定的，例如 parseInt() ，parseFloat() ，Number() ，String()，Boolean()， setTimeout() 等等 浏览器私有属性，例如 alert 弹框提示 ， propmt 用户填写 ， confirm 确认， console 等，document 也是。 DOM也有标准，由 W3C 制定。  Number() Number() 有两种用法：\n Number(xxx) 用来把 xxx 转换为数字 声明一个 number 对象，包装成对象，有很多便捷的操作可以用\nvar n = new Number(1) n.valueOf() \/\/ 1 n.toString() \/\/ \x26quot;1\x26quot; n.toFixed(3) \/\/ \x26quot;1.000\x26quot; n.toExponential() \x26quot;1e\x2b0\x26quot;   但是在 Javascript 中，我们很少用第二种方法。",
+    "inLanguage" : "zh-CN",
+    "author" : "leyili",
+    "creator" : "leyili",
+    "publisher": "leyili",
+    "accountablePerson" : "leyili",
+    "copyrightHolder" : "leyili",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-05-20 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-05-20 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/ximuli.github.io\/2018\/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE\/",
+    "wordCount" : "372",
+    "keywords" : [ "JavaScript", "乐亦栗的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ximuli.github.io/">乐亦栗的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/contact/" title="">联系我</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">原型与原型链</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ximuli.github.io/" rel="author">leyili</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-05-20 itemprop="datePublished">May 20, 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ximuli.github.io/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="对象-原型与原型链">对象，原型与原型链</h1>
+
+<h2 id="全局对象">全局对象</h2>
+
+<p>ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）</p>
+
+<p>window 就是一个哈希表，有很多属性。</p>
+
+<p>window 的属性就是全局变量。</p>
+
+<p>在浏览器下， window 的属性可以分为两类：</p>
+
+<ul>
+<li>ECMAScript 规定的，例如 <code>parseInt()</code> ，<code>parseFloat()</code> ，<code>Number()</code>  ，<code>String()</code>，<code>Boolean()</code>， <code>setTimeout()</code> 等等</li>
+<li>浏览器私有属性，例如 <code>alert</code> 弹框提示 ， <code>propmt</code> 用户填写 ， <code>confirm</code> 确认， <code>console</code> 等，<code>document</code> 也是。 DOM也有标准，由 W3C 制定。</li>
+</ul>
+
+<h3 id="number">Number()</h3>
+
+<p>Number() 有两种用法：</p>
+
+<ol>
+<li>Number(xxx) 用来把 xxx 转换为数字</li>
+
+<li><p>声明一个 number 对象，包装成对象，有很多便捷的操作可以用</p>
+
+<pre><code class="language-javascript">var n = new Number(1)
+n.valueOf()
+// 1
+n.toString()
+// &quot;1&quot;
+n.toFixed(3)
+// &quot;1.000&quot;
+n.toExponential()
+&quot;1e+0&quot;
+</code></pre></li>
+</ol>
+
+<p>但是在 Javascript 中，我们很少用第二种方法。</p>
+
+<p>你有没有想过，为什么 <code>var a = 1</code> 仅仅是声明了一个基本类型，基本类型没有属性，但是却有很多操作可以直接用呢？</p>
+
+<pre><code class="language-javascript">var a = 1
+a.toFixed(3)
+// &quot;1.000&quot;
+a.toString()
+// &quot;1&quot;
+a.valueOf()
+// 1
+</code></pre>
+
+<p>原因在于这其中涉及到了临时转换。</p>
+
+<p>在声明的时候，JavaScript 创建了临时对象，上面记录了一些可以使用的操作，在语句结束之后，临时对象会消失。</p>
+
+<pre><code class="language-javascript">var b = 1
+b.xxx = 2  //看到 b ，JS马上创建了临时对象，语句结束后，临时对象消失
+b.xxx  //此时又看到b，JS马上创建了新的临时对象。。
+// undefined
+</code></pre>
+
+<p>看下面的内存图：</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="../imgs/temp.jpg" alt="临时转换" class="lazyload"><figcaption class="image-caption">临时转换</figcaption></figure></p>
+
+<pre><code class="language-javascript">var n=1；
+n.toString() ==&gt; temp=new Number(n);
+temp.toString() //用完后把temp对象干掉
+</code></pre>
+
+<h3 id="string">String()</h3>
+
+<ol>
+<li>String(xxx) 用来把 xxx 转换为字符串</li>
+
+<li><p>声明一个 string 对象，有很多便捷的操作可以用</p>
+
+<pre><code class="language-javascript">var s = 'Jonathan'
+var s2 = new String('Hello!')
+</code></pre></li>
+</ol>
+
+<p>建议在 Chrome 控制台输入观察一下。</p>
+
+<p><strong>charAt() 和 charCodeAt()</strong></p>
+
+<pre><code class="language-javascript">var s = 'Jonathan'
+var s2 = new String('Hello!')
+s2.charAt(0)  //返回某个索引对应的字符
+// &quot;H&quot;
+s2.charCodeAt(0)  //返回某个索引对应的字符的 unicode 编码
+// 72
+'a'.charCodeAt()
+// 97
+'a'.charCodeAt(0)
+// 97
+'a'.charCodeAt().toString(16)
+// &quot;61&quot;  //a的十六进制的 unicode 是 &quot;61&quot;
+</code></pre>
+
+<p>string 还有很多很多 API：</p>
+
+<ul>
+<li>trim()</li>
+<li>concat()</li>
+<li>slice()</li>
+<li>replace()</li>
+<li>……</li>
+</ul>
+
+<h3 id="boolean">Boolean()</h3>
+
+<ol>
+<li>Boolean(xxx)</li>
+
+<li><p>声明一个 Boolean 对象，有很多便捷的操作可以用</p>
+
+<pre><code class="language-javascript">var f = false
+var f2 = new Boolean(false)
+if (f) {console.log(1)}
+if (f2) {console.log(2)}
+// 2
+</code></pre></li>
+</ol>
+
+<h3 id="object">Object()</h3>
+
+<p>不同于基本类型，Object 这两种声明方法没有区别。但是需要注意，这两者并不相等。</p>
+
+<pre><code class="language-javascript">var o = {}
+var o2 = new Object()  // 不常用
+o === o2
+// false
+</code></pre>
+
+<h2 id="公用的属性">公用的属性</h2>
+
+<ol>
+<li>避免浪费内存</li>
+<li>当声明一个对象时，生成一个隐藏的key <code>__proto__</code> ，其 value 指向公用属性。</li>
+</ol>
+
+<blockquote>
+<p>所有对象都有 toString 和 valueOf 属性，那么我们是否有必要给每个对象一个 toString 和 valueOf 呢？</p>
+
+<p>明显不需要。</p>
+
+<p>JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公用属性组成的对象）</p>
+
+<p>然后让每一个对象的 <code>__proto__</code> 存储这个「公用属性组成的对象」的地址。</p>
+</blockquote>
+
+<h3 id="重要公式">重要公式</h3>
+
+<pre><code class="language-javascript">var 对象 = new 函数()
+对象.__proto__ === 函数.prototype
+</code></pre>
+
+<p>请记住并疯狂思考下面这张图</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="../imgs/原型与原型链.jpg" alt="原型与原型链" class="lazyload"><figcaption class="image-caption">原型与原型链</figcaption></figure></p>
+
+<p>不妨大胆地思考一下：</p>
+
+<pre><code class="language-javascript">// 声明一个对象 obj ，它有自己的属性 name 和 toString：
+var obj = {
+    name: 'Jonathan',
+    toString: function() {
+        return '666'
+    }
+}
+// obj 的原型 obj.__proto__ 有很多属性，比如：toString 和 valueOf
+// 最后，obj.__proto__.__proto__ 是 null
+// 这就是原型链的末尾，即 null
+// null 没有 __proto__
+// 综上，整个原型链如下：
+// obj ---&gt; obj.__proto__ ---&gt; null
+
+console.log(obj.name)  // Jonathan
+// name 是 obj 自身的属性，值为 Jonathan
+
+console.log(obj.toString)  // f() { return '666'}
+// toString 是 obj 自身的属性
+// obj.__proto__ 上还有一个 toString 属性，但是不会被访问到。
+// 这种情况称为 属性遮蔽（property shadowing）
+
+console.log(obj.valueOf)  // ƒ valueOf() { [native code] }
+// valueOf 并非 obj 自身的属性，那就继续找找 obj.__proto__
+
+console.log(obj.xxx)  // undefined
+// xxx 是 obj 的自身属性吗？不是，那看看 o.__proto__ 上有没有
+// xxx 是 o.__proto__ 的自身属性吗？不是，那看看 o.__proto__.__proto__ 上有没有
+// o.__proto__.__proto__为null，停止搜索
+// 没有 xxx 属性，返回 undefined
+</code></pre>
+
+<p>学习资料：</p>
+
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window" rel="nofollow noreferrer" target="_blank">window MDN</a></p>
+
+<p><a href="https://zhuanlan.zhihu.com/p/23090041" rel="nofollow noreferrer" target="_blank">什么是 JS 原型链？</a></p>
+
+<p>（完）</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>leyili </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ximuli.github.io/2018/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/>https://ximuli.github.io/2018/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ximuli.github.io/tags/javascript/">
+                    #JavaScript</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ximuli.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ximuli.github.io/2018/js%E9%87%8C%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="prev" rel="prev" title="JavaScript里的类型转换"><i class="iconfont icon-left"></i>&nbsp;JavaScript里的类型转换</a>
+         
+        
+        <a href="https://ximuli.github.io/2018/js%E6%95%B0%E7%BB%84/" class="next" rel="next" title="JS数组">JS数组&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ximuli.github.io/">leyili</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

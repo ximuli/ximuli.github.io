@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/html/</link>
+    <description>Recent content in HTML on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 06 Mar 2019 21:39:32 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML语义化</title>
+      <link>https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/</link>
+      <pubDate>Wed, 06 Mar 2019 21:39:32 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2019/2019-03-06-html%E8%AF%AD%E4%B9%89%E5%8C%96/</guid>
+      <description>本文最初于 2018-09-21 发布于 知乎 ，后在 《重学前端》 专栏的学习中，重新复习整理，发布于 Github 上，并计划写一系列前端学习相关的文章。欢迎 star 。
+ HTML 语义化 简单来说，我们可以理解为：用正确的标签做正确的事情。
+例如：
+段落用 p 标签，标题用 h 系列标签，边栏用 aside 标签，主要内容用 main 标签。正确使用语义标签可以带来很多好处。
+为什么要关注 HTML 语义化？（为什么要使用语义类标签？） 对人：
+ 增强可读性，对开发者更友好，在没有 CSS 的情况下也能较好地呈现网页的内容结构与代码结构，便于团队的开发和维护。  对机器：
+ 有利于 SEO ，可以让搜索引擎爬虫更好地获取到更多有效信息，搜索引擎的爬虫依赖于标签来确定上下文和各个关键字的权重，有效提升网页的搜索量。 支持读屏软件，方便其他设备的解析（如屏幕阅读器、盲人阅读器等），利于无障碍阅读，提高可访问性。  一些语义类标签介绍 &amp;lt;header&amp;gt;
+用于展示介绍性内容，通常包含一组介绍性的或是辅助导航的实用元素。
+&amp;lt;footer&amp;gt;
+表示最近一个章节内容或者根节点元素的页脚。通常出现在尾部，包含一些作者信息、相关链接、版权信息等。
+&amp;lt;aside&amp;gt;
+表示跟文章主体不那么相关的部分，可能包含导航、广告等工具性质的内容。
+侧边栏是 aside，aside 不一定是侧边栏。
+aside 和 header 中都可能出现导航 &amp;lt;nav&amp;gt;，header 中的导航多数是到文章的目录，而 aside 中的导航多是到关联页面或者整站地图。
+&amp;lt;address&amp;gt;
+footer 中可以包含此元素。
+容易误用，并非表示单纯的地址，而是表示「文章作者的联系方式」。
+ 可以让作者为它最近的 &amp;lt;article&amp;gt; 或者 &amp;lt;body&amp;gt; 祖先元素提供联系信息。在后一种情况下，它应用于整个文档。</description>
+    </item>
+    
+    <item>
+      <title>HTML 常见标签</title>
+      <link>https://ximuli.github.io/2018/html-tag/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/html-tag/</guid>
+      <description>关于 a 标签和 button 标签  如果是要跳转到其他页面或某一部分，就用 a 标签；如果是想弹出对话框之类的操作，就用 button 标签。 二者的区别之一在于是否为 空标签 。  关于 CSS 布局 目前 CSS 布局最适合的布局只有两种：横向布局和纵向布局。所以在写 HTML 的时候要多注意一下，怎么写才是最方便继续写 CSS 的。
+iframe 标签  嵌套页面
+ 默认存在边框，所以通常会直接设置属性 frameborder = &amp;quot;0&amp;quot; 来取消默认的边框样式
+ 例如 &amp;lt;iframe src=&amp;quot;https://www.baidu.com&amp;quot; name=&amp;quot;xxx&amp;quot; frameborder = &amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;
+  name 属性指定当前 iframe 的名称；此时如果有另外的 a 标签属性是 target=xxx，那么此 a 标签链接被点击时网页会在名为 xxx 的 iframe 中打开。
+ sandbox 属性  学习资料：
+Iframe 有什么好处，有什么坏处？
+[iframe MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe
+a 标签 跳转页面，发起 GET 请求</description>
+    </item>
+    
+    <item>
+      <title>HTML 温故而知新</title>
+      <link>https://ximuli.github.io/2018/html/</link>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2018/html/</guid>
+      <description>先搞清楚要做什么，做的过程中需要学什么就去学什么。先用再学才是学编程 的不二法门。
+ HTML HpyerText Markup Language
+W3C 万维网联盟（World Wide Web Consortium），又称 W3C 理事会，是万维网的主要国际标准组织。由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。
+W3C 根据浏览器的实际情况总结文档，并不是凭空想象。
+W3C制定的网络标准并非强制而只是推荐标准。
+MDN MDN Web Docs（旧称Mozilla Developer Network、Mozilla Developer Center，简称MDN）是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站。
+关于标签  理解清楚每个标签的含义，关注标签语义化；不要老用 div ，div 是没有任何语义的
+ HTML5 的 DOCTYPE 是 &amp;lt;!DOCTYPE html&amp;gt; ，其他版本都很难记。当然也可以做一些了解：
+  https://www.w3.org/QA/2002/04/valid-dtd-list.html
+ html head body 这些标签实际上在特定情况下是可以省略的，我们可以查看文档（搜索 HTML spec） 来了解：https://www.w3.org/TR/html5/ 当然，如果你嫌弃文档，也可以直接在 MDN 上搜索
+ 常见的一些标签：a、form、input、button、h1、p、ul、ol、small、strong、div、span、kbd、video、audio、svg 。基本上了解标签对应单词的意思，就知道这个标签怎么用了。（关注语义化）
+  空元素 一个空元素（empty element）可能是 HTML，SVG，或者 MathML 里的一个不可能存在子节点 （例如内嵌的元素或者元素内的文本）的 element 。
+在 HTML 中，通常在一个空元素上使用一个闭标签是无效的。</description>
+    </item>
+    
+    <item>
+      <title>常用Meta标签用法记录</title>
+      <link>https://ximuli.github.io/2017/%E5%B8%B8%E8%A7%81%E7%9A%84meta%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/%E5%B8%B8%E8%A7%81%E7%9A%84meta%E6%A0%87%E7%AD%BE/</guid>
+      <description>&amp;lt;meta&amp;gt; 常用标签全记录 平常见到某些网站头部的&amp;lt;meta&amp;gt;标签有一大串，然而我并不知道其具体作用都是什么，现做如下整理，便于以后开发中的使用。
+&amp;lt;meta&amp;gt; 元素可提供有关某个 HTML 元素的元信息 (meta-information)，比如描述、针对搜索引擎的关键词以及刷新频率。
+meta标签的可选属性有两个，分别是：name和http-equiv，必要属性为content。
+ meta常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。
+ name属性 renderer 作用于双核浏览器
+&amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;webkit&amp;quot;&amp;gt; //让双核浏览器使用webkit内核渲染页面 &amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;ie-comp&amp;quot;&amp;gt; //默认IE兼容模式 &amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;ie-stand&amp;quot;&amp;gt; //默认IE标准模式  UC和QQ &amp;lt;meta name=&amp;quot;screen-orientation&amp;quot; content=&amp;quot;portrait&amp;quot;&amp;gt; //UC强制竖屏； &amp;lt;meta name=&amp;quot;x5-orientation&amp;quot; content=&amp;quot;portrait&amp;quot;&amp;gt; //QQ强制竖屏； &amp;lt;meta name=&amp;quot;full-screen&amp;quot; content=&amp;quot;yes&amp;quot;&amp;gt; //UC强制全屏； &amp;lt;meta name=&amp;quot;x5-fullscreen&amp;quot; content=&amp;quot;true&amp;quot;&amp;gt; //QQ强制全屏 &amp;lt;meta name=&amp;quot;browsermode&amp;quot; content=&amp;quot;application&amp;quot;&amp;gt; //UC应用模式 &amp;lt;meta name=&amp;quot;x5-page-mode&amp;quot; content=&amp;quot;app&amp;quot;&amp;gt; //QQ应用模式;  robots &amp;lt;meta name=&amp;quot;robots&amp;quot;content=&amp;quot;none&amp;quot;&amp;gt;  robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。
+ 信息参数为all：文件将被检索，且页面上的链接可以被查询； 信息参数为none：文件将不被检索，且页面上的链接不可以被查询； 信息参数为index：文件将被检索； 信息参数为follow：页面上的链接可以被查询； 信息参数为noindex：文件将不被检索，但页面上的链接可以被查询； 信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询。  viewport 常用于移动端的设计中。</description>
+    </item>
+    
+  </channel>
+</rss>

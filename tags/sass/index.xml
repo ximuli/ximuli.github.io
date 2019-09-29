@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sass on 乐亦栗的个人网站</title>
+    <link>https://ximuli.github.io/tags/sass/</link>
+    <description>Recent content in Sass on 乐亦栗的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 23 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ximuli.github.io/tags/sass/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sass学习笔记</title>
+      <link>https://ximuli.github.io/2017/learnsass/</link>
+      <pubDate>Mon, 23 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ximuli.github.io/2017/learnsass/</guid>
+      <description>这里是Jonathan的Sass学习笔记，本笔记所有操作均在windows环境下进行 ，将持续更新。
+ 安装 ## 1、通过命令安装 Sass 先在电脑中安装好 Ruby 之后，接下来就可以安装 Sass 了。在windows下安装 Sass 有多种方法。但这几种方法都是非常的简单，只需要在命令终端输入一行命令即可。
+打开电脑的命令终端，输入下面的命令：
+gem install sass
+如果上面的方法没有安装成功，可以使用下面的两种方法。
+## 2、本地安装 Sass
+直接使用上面的命令安装会让你无法正常实现安装（网络受限原因），当碰到这种情况之时，那么安装需要特殊去处理，可以通过下面的方法来实现 Sass 的正常安装：
+可以到 Rubygems(http://rubygems.org/) 网站上将 Sass 的安装包（http://rubygems.org/gems/sass）下载下来，然后在命令终端输入：
+gem install &amp;lt;把下载的安装包拖到这里&amp;gt;
+直接回车即可安装成功。
+注：在 iOSX 系统平台，可以直接将下载的安装包拖到 &amp;ldquo;gem install&amp;rdquo; 后面，如果在是 Windows 系统，需要手功输入安装的文件路径。
+## 3、淘宝 RubyGems 镜像安装 Sass
+除了下载 Sass 安装包到本地安装之外，碰到网络原因无法安装时还可以使用淘宝 RubyGems 镜像安装 Sass。只是我们需要通过 gem sources 命令来配置源，先移除默认的 https://rubygems.org 源，然后添加淘宝的源 https://ruby.taobao.org：
+第一步：移动默认的源
+gem sources &amp;ndash;remove https://rubygems.org/
+第二步：指定淘宝的源
+gem sources -a https://ruby.</description>
+    </item>
+    
+  </channel>
+</rss>
