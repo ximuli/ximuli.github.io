@@ -6,38 +6,17 @@
     <description>Recent content in Hexo on 乐亦栗的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Jan 2017 17:43:12 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Feb 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ximuli.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hexo 踩坑笔记：利用Hexo和github pages服务搭建个人博客</title>
-      <link>https://ximuli.github.io/2017/start/</link>
-      <pubDate>Tue, 10 Jan 2017 17:43:12 +0000</pubDate>
-      
-      <guid>https://ximuli.github.io/2017/start/</guid>
-      <description>** 声明：** 本人是学渣，英语渣，代码渣。能完成此博客并且部署到线上大多依赖于网络上乐于分享的诸多前辈。 在此表示感谢。另外搭建过程中有很多问题我依然一头雾水，各位小伙伴若有高见，还请不吝赐教。再次感谢。
- 此文所有设置均在window环境下进行
-安装Git和node.js 请自行到官网下载，另，请自备梯子。安装基本没什么需要讲的，一路 next 就可以。
-git官网
-node.js官网
-需要学习Git的同学请移步廖雪峰前辈的网站：Git教程 需要注意的是，在需要用到 npm 之前，请切换到国内的淘宝镜像，否则下载速度异常缓慢，导致各种出错。
-此处放上淘宝镜像的链接。
-$ npm install -g cnpm --registry=https://registry.npm.taobao.org  之后在用到 npm 的地方只需要换成 cnpm 就可以了。
-安装Hexo $ mkdir hexo $ cd hexo $ hexo init  之后经过了漫长的等待。结果：
-没有管这个，继续进行。
-$ cnpm install $ hexo generate $ hexo server  打开 http://localhost:4000/ ，没反应。
-又重新输入了一下$ hexo init ， 最后弹出的一行是 Start Blogging with Hexo !
-再次打开 http://localhost:4000/ ，这次是一直处于刷新的状态，页面却显示不出来。</description>
-    </item>
-    
-    <item>
       <title>换电脑后如何在新电脑上更新博客</title>
-      <link>https://ximuli.github.io/1/changecomputer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://ximuli.github.io/2017/changecomputer/</link>
+      <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ximuli.github.io/1/changecomputer/</guid>
+      <guid>https://ximuli.github.io/2017/changecomputer/</guid>
       <description>最近换用了小姐姐的笔记本电脑，用起来比我原来的破电脑流畅多了。
 其实我比较菜，在知乎上查换电脑如何更新Hexo博客，查到教人怎么做博客的，直到最近把电脑的各种软件安装好，搬着我的小梯子翻了半天，才找到一点有用的线索。在这之前我已经把整个博客的hexo文件夹复制打包放优盘里带到了上海……
 正文开始：

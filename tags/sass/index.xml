@@ -13,10 +13,10 @@
     
     <item>
       <title>Sass学习笔记</title>
-      <link>https://ximuli.github.io/2017/learnsass/</link>
+      <link>https://ximuli.github.io/2017/learn_sass/</link>
       <pubDate>Mon, 23 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ximuli.github.io/2017/learnsass/</guid>
+      <guid>https://ximuli.github.io/2017/learn_sass/</guid>
       <description>这里是Jonathan的Sass学习笔记，本笔记所有操作均在windows环境下进行 ，将持续更新。
  安装 ## 1、通过命令安装 Sass 先在电脑中安装好 Ruby 之后，接下来就可以安装 Sass 了。在windows下安装 Sass 有多种方法。但这几种方法都是非常的简单，只需要在命令终端输入一行命令即可。
 打开电脑的命令终端，输入下面的命令：
